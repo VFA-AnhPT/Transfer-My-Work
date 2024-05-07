@@ -4,11 +4,9 @@
 # Architecture
 
 1. Description
-
 ![ArchitectureDescription](../Images/Architecture/0-ArchitectureDescription.png)
    
 2. Diagram
-
 ![ArchitectureDiagram](../Images/Architecture/0-ArchitectureDiagram.png)
   
 # Example
