@@ -84,6 +84,7 @@ Mỗi khi chuyển sang 1 platform sẽ cần có những packages cần thiết
 ````
 
 1. Install từ LocalPackages
+   
 ![1-LocalPackages_](../Images/PlatformSwitcher/1-LocalPackages_.png)
 
 - Bên trong folder LocalPackages
@@ -98,9 +99,9 @@ Ví dụ:
 
 [Vive]
     + XRSynthesis.Multiplatform.Vive (từ LocalPackages)
-    + ViveWaveXR/WaveEssence	
-    + ViveWaveXR/WaveNative
-    + ViveWaveXR/WaveXRSdk
+    + ViveWaveXR/WaveEssence (từ LocalPackages)	
+    + ViveWaveXR/WaveNative (từ LocalPackages)
+    + ViveWaveXR/WaveXRSdk (từ LocalPackages)
 ````
 
 ## Project Settings
@@ -128,3 +129,14 @@ Mỗi platform sẽ có 1 sự thay đổi khác nhau về những phần ở d�
 
 6. Thay đổi về Targe/Minimum Api Level
 ![5-TargerAndMinimumApi](../Images/PlatformSwitcher/5-TargerAndMinimumApi.png)
+
+## Implementation
+````
+- PlatformSwitcherMenu.cs
+- PlatformSwitcher.cs
+- PackageName.cs
+- XRPluginManagementSettings.cs
+- ScriptingDefineSymbolsModifier.cs
+- PlayerManagementSettings.cs
+- PlayerPlatformSettings.cs
+````
