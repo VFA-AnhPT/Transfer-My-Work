@@ -4,7 +4,7 @@
 
 First, switch the platform using the XRSynthesis > Multiplatform menu and build and run (as of July 2023, WebGL and Quest are being developed relatively preferentially and are stable in operation).
 
-![MultiplatformMenu](Images/MultiplatformMenu.png)
+![MultiplatformMenu](Images/ProjectOverview/MultiplatformMenu.png)
 
 The XRSynthesis.Multiplatform function is intended to collectively change settings for Unity build targets, packages, camera rigs, XR Plugin Management plugins, etc. Be sure to switch the platform from this menu, not from Unity's Build Settings.
 
@@ -12,7 +12,7 @@ The XRSynthesis.Multiplatform function is intended to collectively change settin
 
 Visual Studio 2022 or Rider can be used. Since we are using packages, during development please check the following in Preferences > External Tools and press the "Regenerate project files" button.
 
-![IDESettings](Images/IDESettings.png)
+![IDESettings](Images/ProjectOverview/IDESettings.png)
 
 ## Efficient multiplayer development
 
@@ -32,7 +32,7 @@ Please note that ParrelSync and Unity's official Multiplayer Play Mode cannot mi
 
 I'm creating a WebGL menu to make building and deploying easier. We are using [WebGLBuildAndDeploy](https://github.com/korinVR/WebGLBuildAndDeploy), which is published as OSS.
 
-![WebGLBuildAndDeploy](Images/WebGLBuildAndDeploy.png)
+![WebGLBuildAndDeploy](Images/ProjectOverview/WebGLBuildAndDeploy.png)
 
 Executing Build (Development) will perform a local Development build. Run Start Local HTTPS Server to open a locally built page (it uses [Browsersync](https://browsersync.io/), so it must be installed). Open your local build folder with Open Build Folder.
 
@@ -53,7 +53,7 @@ We have taken various measures to reduce the build size. I have made notes on th
 
 Once built, you can view the build report by selecting Window > Open Last Build Report (a feature of the Build Report Inspector package). Now let's see if any unnecessary assets are included. Adjust the import settings if the texture or FBX size is large.
 
-![BuildReportInspector](Images/BuildReportInspector.png)
+![BuildReportInspector](Images/ProjectOverview/BuildReportInspector.png)
 
 ### World Optimization
 
@@ -81,7 +81,7 @@ I try not to use TextMesh Pro, UI Toolkit, and Input System because the size inc
 
 Templates for each project are added to the WebGLTemplates folder (the Project menu changes which one to use).
 
-![WebGLTemplates](Images/WebGLTemplates.png)
+![WebGLTemplates](Images/ProjectOverview/WebGLTemplates.png)
 
 Unity default template
 
