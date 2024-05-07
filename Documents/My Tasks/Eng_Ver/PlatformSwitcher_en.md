@@ -12,7 +12,7 @@
 
   > XRSynthesis/Multiplatform/Switch/<target_platform>
 
-![SwitchPlatforms](../Images/PlatformSwitcher/0-SwitchPlatforms.png)
+![SwitchPlatforms](../../Images/PlatformSwitcher/0-SwitchPlatforms.png)
 
 Hiện tại chủ yếu làm việc trên những platform
 ````
@@ -31,7 +31,7 @@ Những platform sẽ làm việc trong tương lai
 
 1. Khi switch platform, sẽ có những thay đổi sẽ xảy ra ở những setting nằm trong prefab XRSynthesis.
 
-![XRSynthesisPrefab](../Images/PlatformSwitcher/2-XRSynthesisPrefab.png)
+![XRSynthesisPrefab](../../Images/PlatformSwitcher/2-XRSynthesisPrefab.png)
 
 2. Những setting sẽ thay đổi bao gồm
 ````
@@ -49,7 +49,7 @@ Những platform sẽ làm việc trong tương lai
 - AvatarVRIKDataSetting dùng để lưu data IK Anchor cho toàn bộ phần body (head, hand, chest,….) khi dùng controller hoặc hand tracking.
 ````
 
-![AvatarInitializeSettingsScriptable](../Images/PlatformSwitcher/3-AvatarInitializeSettingsScriptable.png)
+![AvatarInitializeSettingsScriptable](../../Images/PlatformSwitcher/3-AvatarInitializeSettingsScriptable.png)
 
 4. Nội dung CameraRigSettings
 ```` 
@@ -57,7 +57,7 @@ Những platform sẽ làm việc trong tương lai
 - Prefab camera rig sẽ dung để chạy setup camera VR cho platform đó.
 ````    
 
-![CameraRig](../Images/PlatformSwitcher/3-CameraRig.png)
+![CameraRig](../../Images/PlatformSwitcher/3-CameraRig.png)
 
 5. Nội dung HandPoseSettings
 ````
@@ -66,13 +66,13 @@ Những platform sẽ làm việc trong tương lai
 - Phần Hand Poses là settings cho từng thao tác khi dùng controller.
 ````
 
-![HandPoseSettings](../Images/PlatformSwitcher/3-HandPoseSettings.png)
+![HandPoseSettings](../../Images/PlatformSwitcher/3-HandPoseSettings.png)
 
 6. Nội dung InitializeObjectAsset
 ````
 - Thay đổi những prefab cần thiết để chạy UI, event system, data manager…
 ````
-![3-InitializeObjectAsset](../Images/PlatformSwitcher/3-InitializeObjectAsset.png)
+![3-InitializeObjectAsset](../../Images/PlatformSwitcher/3-InitializeObjectAsset.png)
 
 
 ## 3.	Platform Packages
@@ -84,10 +84,10 @@ Mỗi khi chuyển sang 1 platform sẽ cần có những packages cần thiết
 ````
 
 1. Install từ LocalPackages
-![1-LocalPackages_](../Images/PlatformSwitcher/1-LocalPackages_.png)
+![1-LocalPackages_](../../Images/PlatformSwitcher/1-LocalPackages_.png)
 
 - Bên trong folder LocalPackages
-![1-LocalPackages](../Images/PlatformSwitcher/1-LocalPackages.png)
+![1-LocalPackages](../../Images/PlatformSwitcher/1-LocalPackages.png)
 
 ````
 - Mỗi platform sẽ yêu cầu những package riêng.
@@ -108,23 +108,23 @@ Mỗi platform sẽ có 1 sự thay đổi khác nhau về những phần ở d�
 
 1. Thay đổi về Custom Build
 
-![5-CustomBuild](../Images/PlatformSwitcher/5-CustomBuild.png)
+![5-CustomBuild](../../Images/PlatformSwitcher/5-CustomBuild.png)
 
 2. Thay đổi về Graphic Api
 
-![5-GraphicApi](../Images/PlatformSwitcher/5-GraphicApi.png)
+![5-GraphicApi](../../Images/PlatformSwitcher/5-GraphicApi.png)
 
 3. Thay đổi về Platform Data
 
-![5-PlatformData](../Images/PlatformSwitcher/5-PlatformData.png)
+![5-PlatformData](../../Images/PlatformSwitcher/5-PlatformData.png)
 
 4. Thay đổi về Player Platform Settings
 
-![5-PlayerPlatformSettings](../Images/PlatformSwitcher/5-PlayerPlatformSettings.png)
+![5-PlayerPlatformSettings](../../Images/PlatformSwitcher/5-PlayerPlatformSettings.png)
 
 5. Thay đổi về Script Define Symbol
 
-![5-ScriptDefineSymbol](../Images/PlatformSwitcher/5-ScriptDefineSymbol.png)
+![5-ScriptDefineSymbol](../../Images/PlatformSwitcher/5-ScriptDefineSymbol.png)
 
 6. Thay đổi về Targe/Minimum Api Level
-![5-TargerAndMinimumApi](../Images/PlatformSwitcher/5-TargerAndMinimumApi.png)
+![5-TargerAndMinimumApi](../../Images/PlatformSwitcher/5-TargerAndMinimumApi.png)
