@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 07-05-2024
+> Last updated: 08-05-2024
 > 
 [[English](Eng_Ver/PlatformSwitcher_en.md)/Vietnamese]
 # Overview
