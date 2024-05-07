@@ -131,5 +131,11 @@ Each platform will perform these changes below and they will be different from o
 
 ## Implementation
 ````
-
+- PlatformSwitcherMenu.cs
+- PlatformSwitcher.cs
+- PackageName.cs
+- XRPluginManagementSettings.cs
+- ScriptingDefineSymbolsModifier.cs
+- PlayerManagementSettings.cs
+- PlayerPlatformSettings.cs
 ````
