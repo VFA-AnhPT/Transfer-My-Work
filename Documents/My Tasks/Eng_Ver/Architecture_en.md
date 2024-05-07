@@ -1,6 +1,8 @@
 > Author: TriHD
 > 
 > Last updated: 08-05-2024
+> 
+[English/[Vietnamese](../Architecture.md)]
 # Architecture
 
 1. Description
