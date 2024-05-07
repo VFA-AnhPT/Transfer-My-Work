@@ -2,24 +2,24 @@
 > 
 > Last updated: 08-05-2024
 > 
-[English/[Vietnamese](../Architecture.md)]
+> [English/[Vietnamese](../Architecture.md)]
 # Architecture
 
 1. Description
-![ArchitectureDescription](../../Images/Architecture/0-ArchitectureDescription.png)
+![ArchitectureDescription](../../Images/Architecture/0-ArchitectureDescription_en.png)
    
 2. Diagram
 ![ArchitectureDiagram](../../Images/Architecture/0-ArchitectureDiagram.png)
   
 # Example
->Yêu cầu: tạo 1 UI đơn giản có 1 tấm Dim background hiện dòng chữ "Click To Start" và đợi sự kiện click trên UI để tắt nó đi.
+> Requirement: create a simple UI with a Dim background showing the text "Click To Start" and wait for a click event on the UI to turn it off.
 >
->Demo: https://drive.google.com/file/d/1GLJ80tvvxMHhwU5gyTFrwwL2t0Ts7w9-/view?usp=sharing
+> Demo: https://drive.google.com/file/d/1GLJ80tvvxMHhwU5gyTFrwwL2t0Ts7w9-/view?usp=sharing
 
 1. VContainer Layer (WXR_LifeTimeScope)
 ````
-- DI container WXR_LifeTimeScope sẽ tạo một child prefab nằm trong một scope mới là LifeTimeScope của WXR_StartGameUI prefab.
-- Scope mới này được enqueue vào parent là WXR_LifeTimeScope (nói cách khác thì WXR_LifeTimeScope là parent của Scope mới).
+- DI container WXR LifeTimeScope will create a child prefab located in a new scope. It's LifeTimeScope script attached to WXR_StartGameUI prefab.
+- This new Scope is enqueueed into the parent WXR_LifeTimeScope (in other words, WXR_LifeTimeScope is the parent of the new Scope).
 ````
 
 ![1-SampleCode1](../../Images/Architecture/1-SampleCode1.png)
@@ -28,31 +28,32 @@
 
 2. Domain Layer + Pub/Sub Message (StartGameState)
 ````
-- Sau khi khởi tạo scope mới thành công ở trên, chạy StartGameState để xử lý logic của Domain Layer (chạy startGameState.Run() trong hình ở bước trên).
-- StartGameState sẽ dùng pub/sub message để đợi phần xử lý bên Presentation Layer bên dưới đã subscribe.
-- Cụ thể StartGameState sẽ đợi phần ShowUI hoàn thành và sau đó đợi phần HideUI (chờ sự kiện click trên UI để kết thúc).
-- Kết thúc phần xử lý của StartGameState.
+- When successfully initializing the new scope above, run StartGameState to handle the logic of the Domain Layer (run startGameState.Run() in the image in the step above).
+- StartGameState will use pub/sub message to wait for the process to completion on Presentation Layer.
+- To be clear, StartGameState will wait for the ShowUI part to complete and then wait for the HideUI part (await the click event on the UI to finish).
+- At this time, StartGameState is done completely.
 ````
 
 ![1-SampleCode3](../../Images/Architecture/1-SampleCode3.png)
 
 3. Presentation Layer + Pub/Sub Message (StartGamePresenter)
 ````
-- Nhiệm vụ chính của layer này là cấu nối giữa Domain Layer và View Layer để tách biệt phần control logic ra khỏi View Layer và Domain Layer.
-- StartGamePresenter sẽ subscribe vào pub/sub message để lắng nghe sự kiện publish từ Domain Layer và xử lý logic.
-- Method ShowUIAsync đơn giản là sẽ đợi sự kiện click trên UI và kết thúc. 
+- This layer takes responsibility to connect the Domain Layer and View Layer to separate the control logic from them.
+- StartGamePresenter will subscribe to pub/sub messages to listen for publish events from the Domain Layer and handle logic after that.
+- The ShowUIAsync method will simply wait for the click event on the UI and finish.
 ````
 
 ![1-SampleCode4](../../Images/Architecture/1-SampleCode4.png)
 
 4. View Layer (StartGameUI)
 ````
-- Phần layer này chỉ chứa view script (thường là Monobehaviour) và không chứa bất kì domain hay control logic nào bên trong.
+- This layer only contains view script (often Monobehaviour) and does not contain any domain or control logic inside.
 ````
 
 ![1-SampleCode5](../../Images/Architecture/1-SampleCode5.png)
 
-
-
-  
+# Demo
+````
+https://drive.google.com/file/d/1GLJ80tvvxMHhwU5gyTFrwwL2t0Ts7w9-/view?usp=sharing
+````  
 
