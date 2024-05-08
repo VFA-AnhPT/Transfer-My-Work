@@ -3,27 +3,77 @@
 > Last updated: 08-05-2024
 > 
 > [English/[Vietnamese](../Networking.md)]
+
 # Networking
 
 ## Configuration
 1. Network Settings
-   
+- To modify settings for networks (network id, max player, send rate, player prefab...), find 2 settings as below.
+````
+- PhotonSettings 
+- FishNetSettings
+````
+
 ![0-NetworkSettings](../../Images/Networking/0-NetworkSettings.png)
 
 2. Network Prefabs
-   
+- To change the network between Photon and Fishnet, find the corresponding prefab and replace it with the Network Manager Prefab located in the XRSynthesisLifetimeScope prefab.
+
 ![0-ChangeNetworkPrefab](../../Images/Networking/0-ChangeNetworkPrefab.png)
 
 ## Flow
-1. Diagram
+### Diagram
 ![1-NetworkDiagram](../../Images/Networking/1-NetworkDiagram.png)
 
-2. Description
+### Description
+1. XRSynthesisLifetimeScope (VContainer)
+````
+- Register NetworkConnectController as an entry point (run as a monobehaviour)
+- This entry point will run continuously throughout the network handler
+````
+
+2. NetworkConnectController (Presenter - Control Flow)
+````
+- Use message pipe to broadcast to NetworkConnectAreaTrigger.
+- Keep waiting for the event that the player enters the area where he can connect to the network.
+- If the event above is triggered, start connecting and joining the room through the INetworkManager interface (injected with VContainer)
+```` 
+
+3. NetworkConnectAreaTrigger (Domain)
+````
+- Use message pipe to listen for event from NetworkConnectController.
+````
+
+4. INetworkManager (PhotonManger/FishNetManager) (Domain)
+````
+- After the player successfully connects to the room, create an instance of the character entity using the prefab Vi_PhotonPlayer or Vi_FishNetPlayer.
+- This entity is used as a bridge to sync data.
+- Data is synced back and forth between local player and remote player (both local and remote player are created from prefab WXR_Player Variant which attached in NetworkSettings)
+````
+
+5. Domain Photon/Domain Fishnet
+-  Contains components attached to Vi_PhotonPlayer or Vi_FishNetPlayer, they are used to sync player data of WXR_Player Variant.
+````
+[Photon]
+- PhotonPlayer.cs
+- AvatarAnimationSync.cs
+- TrackingModeSync.cs
+- HandPoseSync.cs
+
+[Fishnet]
+- FishNetPlayer.cs
+- FishNetAvatarAnimationSync.cs
+- FishNetTrackingModeSync.cs
+- FishNetHandPoseSync.cs
+````
 
 ## Setup
 
 1. Fishnet
-- Setup local server: https://docs.google.com/presentation/d/1skq_U9g1ANTi8WUn-5bG0_7vpjN2k1oVnqthiAZ7Who/edit#slide=id.g2c95909dc32_0_48
+- Setup local server:
+````
+https://docs.google.com/presentation/d/1skq_U9g1ANTi8WUn-5bG0_7vpjN2k1oVnqthiAZ7Who/edit#slide=id.g2c95909dc32_0_48
+````
 
 ## Important Notes
 
@@ -58,6 +108,5 @@ https://visualive.atlassian.net/wiki/spaces/MET/pages/303038470
 >
 > その時はお声がけしますので
 > そのような指示があったときには『NETWORK_KARAOKE_DEMO』に変更をよろしくお願いいたします。
-
 
 
