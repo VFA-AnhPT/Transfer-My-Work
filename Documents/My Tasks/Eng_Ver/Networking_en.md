@@ -8,15 +8,15 @@
 ## Configuration
 1. Network Settings
    
-![0-NetworkSettings](../Images/Networking/0-NetworkSettings.png)
+![0-NetworkSettings](../../Images/Networking/0-NetworkSettings.png)
 
 2. Network Prefabs
    
-![0-ChangeNetworkPrefab](../Images/Networking/0-ChangeNetworkPrefab.png)
+![0-ChangeNetworkPrefab](../../Images/Networking/0-ChangeNetworkPrefab.png)
 
 ## Flow
 1. Diagram
-![1-NetworkDiagram](../Images/Networking/1-NetworkDiagram.png)
+![1-NetworkDiagram](../../Images/Networking/1-NetworkDiagram.png)
 
 2. Description
 
