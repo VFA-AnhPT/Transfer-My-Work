@@ -2,7 +2,7 @@
 > 
 > Last updated: 08-05-2024
 > 
-[[English](Eng_Ver/PlatformSwitcher_en.md)/Vietnamese]
+> [[English](Eng_Ver/PlatformSwitcher_en.md)/Vietnamese]
 # Overview
 
 ## Switch platform
