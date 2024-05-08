@@ -59,10 +59,5 @@ https://visualive.atlassian.net/wiki/spaces/MET/pages/303038470
 > その時はお声がけしますので
 > そのような指示があったときには『NETWORK_KARAOKE_DEMO』に変更をよろしくお願いいたします。
 
-Entity prefab (Vi_FishnetPlayer, Vi_PhotonPlayer, WXR_Player)
-Flow (NetworkConnectionArea, JoinRoom, PhotonPlayer/FishnetPlayer ,Sync components (avatarAnimation, hanspose, player control, [transform(head,hand,leg...)], 
-XRSynthesisLifetimeScope
-NetworkConnectController
-
 
 
