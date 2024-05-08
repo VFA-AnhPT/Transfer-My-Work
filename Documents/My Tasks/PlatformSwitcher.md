@@ -88,6 +88,7 @@ Mỗi khi chuyển sang 1 platform sẽ cần có những packages cần thiết
 ![1-LocalPackages_](../Images/PlatformSwitcher/1-LocalPackages_.png)
 
 - Bên trong folder LocalPackages
+  
 ![1-LocalPackages](../Images/PlatformSwitcher/1-LocalPackages.png)
 
 ````
