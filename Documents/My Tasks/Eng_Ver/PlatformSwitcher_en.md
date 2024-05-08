@@ -87,6 +87,7 @@ When switching to any platform, essential packages will be installed from two so
 ![1-LocalPackages_](../../Images/PlatformSwitcher/1-LocalPackages_.png)
 
 - LocalPackages folder content
+
 ![1-LocalPackages](../../Images/PlatformSwitcher/1-LocalPackages.png)
 
 ````
