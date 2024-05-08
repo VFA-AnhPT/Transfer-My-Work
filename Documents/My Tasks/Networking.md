@@ -7,11 +7,17 @@
 
 ## Configuration
 1. Network Settings
-   
+- Để điều chỉnh setting cho networks (network id, max players, send rate, player prefab....), tìm 2 file settings cho 2 mạng lưới Photon và Fishnet
+````
+- PhotonSettings 
+- FishNetSettings
+````
+
 ![0-NetworkSettings](../Images/Networking/0-NetworkSettings.png)
 
 2. Network Prefabs
-   
+- Để thay đổi mạng lưới giữa Photon và Fishnet, tìm prefab tương ứng và thay vào 
+
 ![0-ChangeNetworkPrefab](../Images/Networking/0-ChangeNetworkPrefab.png)
 
 ## Flow
