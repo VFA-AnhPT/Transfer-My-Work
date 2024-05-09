@@ -129,7 +129,12 @@ Mỗi platform sẽ có 1 sự thay đổi khác nhau về những phần ở d�
 ![5-ScriptDefineSymbol](../Images/PlatformSwitcher/5-ScriptDefineSymbol.png)
 
 6. Thay đổi về Targe/Minimum Api Level
+   
 ![5-TargerAndMinimumApi](../Images/PlatformSwitcher/5-TargerAndMinimumApi.png)
+
+7. Thay đổi về XR Management
+   
+![5-XRManagement](../Images/PlatformSwitcher/5-XRManagement.png)
 
 ## Implementation
 ````
