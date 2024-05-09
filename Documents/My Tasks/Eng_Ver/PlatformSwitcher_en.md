@@ -128,7 +128,12 @@ Each platform will perform these changes below and they will be different from o
 ![5-ScriptDefineSymbol](../../Images/PlatformSwitcher/5-ScriptDefineSymbol.png)
 
 6. Targe/Minimum Api Level
+   
 ![5-TargerAndMinimumApi](../../Images/PlatformSwitcher/5-TargerAndMinimumApi.png)
+
+7. XR Management
+   
+![5-XRManagement](../../Images/PlatformSwitcher/5-XRManagement.png)
 
 ## Implementation
 ````
