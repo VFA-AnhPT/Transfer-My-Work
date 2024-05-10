@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 08-05-2024
+> Last updated: 10-05-2024
 > 
 > [[English](Eng_Ver/Networking_en.md)/Vietnamese]
 # Networking
@@ -17,6 +17,8 @@
 
 2. Network Prefabs
 - Để thay đổi mạng lưới giữa Photon và Fishnet, tìm prefab tương ứng và thay vào phần Network Manager Prefab nằm ở XRSynthesisLifetimeScope prefab
+
+![0-NetworkManagerPrefab](../Images/Networking/0-NetworkManagerPrefab.png)
 
 ![0-ChangeNetworkPrefab](../Images/Networking/0-ChangeNetworkPrefab.png)
 
