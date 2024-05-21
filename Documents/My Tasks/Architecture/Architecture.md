@@ -2,14 +2,14 @@
 > 
 > Last updated: 08-05-2024
 >
->[[English](Eng_Ver/Architecture_en.md)/Vietnamese]
+>[[English](../Eng_Ver/Architecture_en.md)/Vietnamese]
 # Architecture
 
 1. Description
-![ArchitectureDescription](../Images/Architecture/0-ArchitectureDescription.png)
+![ArchitectureDescription](../../Images/Architecture/0-ArchitectureDescription.png)
    
 2. Diagram
-![ArchitectureDiagram](../Images/Architecture/0-ArchitectureDiagram.png)
+![ArchitectureDiagram](../../Images/Architecture/0-ArchitectureDiagram.png)
   
 # Example
 >Yêu cầu: tạo 1 UI đơn giản có 1 tấm Dim background hiện dòng chữ "Click To Start" và đợi sự kiện click trên UI để tắt nó đi.
@@ -22,9 +22,9 @@
 - Scope mới này được enqueue vào parent là WXR_LifeTimeScope (nói cách khác thì WXR_LifeTimeScope là parent của Scope mới).
 ````
 
-![1-SampleCode1](../Images/Architecture/1-SampleCode1.png)
+![1-SampleCode1](../../Images/Architecture/1-SampleCode1.png)
 
-![1-SampleCode2](../Images/Architecture/1-SampleCode2.png)
+![1-SampleCode2](../../Images/Architecture/1-SampleCode2.png)
 
 2. Domain Layer + Pub/Sub Message (StartGameState)
 ````
@@ -34,7 +34,7 @@
 - Kết thúc phần xử lý của StartGameState.
 ````
 
-![1-SampleCode3](../Images/Architecture/1-SampleCode3.png)
+![1-SampleCode3](../../Images/Architecture/1-SampleCode3.png)
 
 3. Presentation Layer + Pub/Sub Message (StartGamePresenter)
 ````
@@ -43,14 +43,14 @@
 - Method ShowUIAsync đơn giản là sẽ đợi sự kiện click trên UI và kết thúc. 
 ````
 
-![1-SampleCode4](../Images/Architecture/1-SampleCode4.png)
+![1-SampleCode4](../../Images/Architecture/1-SampleCode4.png)
 
 4. View Layer (StartGameUI)
 ````
 - Phần layer này chỉ chứa view script (thường là Monobehaviour) và không chứa bất kì domain hay control logic nào bên trong.
 ````
 
-![1-SampleCode5](../Images/Architecture/1-SampleCode5.png)
+![1-SampleCode5](../../Images/Architecture/1-SampleCode5.png)
 
 # Demo
 ````
