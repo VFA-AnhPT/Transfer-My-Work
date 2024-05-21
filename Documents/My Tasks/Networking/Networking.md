@@ -2,7 +2,7 @@
 > 
 > Last updated: 10-05-2024
 > 
-> [[English](Eng_Ver/Networking_en.md)/Vietnamese]
+> [[English](../Eng_Ver/Networking_en.md)/Vietnamese]
 # Networking
 
 ## Configuration
@@ -13,18 +13,18 @@
 - FishNetSettings
 ````
 
-![0-NetworkSettings](../Images/Networking/0-NetworkSettings.png)
+![0-NetworkSettings](../../Images/Networking/0-NetworkSettings.png)
 
 2. Network Prefabs
 - Để thay đổi mạng lưới giữa Photon và Fishnet, tìm prefab tương ứng và thay vào phần Network Manager Prefab nằm ở XRSynthesisLifetimeScope prefab
 
-![0-NetworkManagerPrefab](../Images/Networking/0-NetworkManagerPrefab.png)
+![0-NetworkManagerPrefab](../../Images/Networking/0-NetworkManagerPrefab.png)
 
-![0-ChangeNetworkPrefab](../Images/Networking/0-ChangeNetworkPrefab.png)
+![0-ChangeNetworkPrefab](../../Images/Networking/0-ChangeNetworkPrefab.png)
 
 ## Flow
 ### Diagram
-![1-NetworkDiagram](../Images/Networking/1-NetworkDiagram.png)
+![1-NetworkDiagram](../../Images/Networking/1-NetworkDiagram.png)
 
 ### Description
 1. XRSynthesisLifetimeScope (VContainer)
