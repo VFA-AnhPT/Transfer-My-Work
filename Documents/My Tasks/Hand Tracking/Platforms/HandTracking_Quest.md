@@ -3,7 +3,7 @@
 > Last updated: 21-05-2024
 > 
 > [Vietnamese]
-# Hand Tracking For Mobile
+# Hand Tracking For Quest
 
 ## Related Platforms
 Platform   |Notes       
