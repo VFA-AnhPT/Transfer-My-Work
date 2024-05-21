@@ -3,13 +3,13 @@
 > Last updated: 21-05-2024
 > 
 > [Vietnamese]
-# Hand Tracking For Mobile
+# Hand Tracking For Vive
 
 ## Related Platforms
 Platform   |Notes       
 ----------------|------------
-[Quest]()|Hand tracking for Quest.
-[Vive]()|Hand tracking for Vive.
+[Mobile](../HandTracking.md)|Hand tracking for Mobile.
+[Quest](./HandTracking_Quest.md)|Hand tracking for Quest.
 
 ## Flow
 ### Diagram
