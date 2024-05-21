@@ -8,8 +8,8 @@
 ## Related Platforms
 Platform   |Notes       
 ----------------|------------
-[Quest](../Platforms/HandTracking_Quest.md)|Hand tracking for Quest.
-[Vive](../Platforms/HandTracking_Vive.md)|Hand tracking for Vive.
+[Quest](./Platforms/HandTracking_Quest.md)|Hand tracking for Quest.
+[Vive](./Platforms/HandTracking_Vive.md)|Hand tracking for Vive.
 
 ## Flow
 ### Diagram
