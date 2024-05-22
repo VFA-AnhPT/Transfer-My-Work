@@ -27,7 +27,9 @@ Platform   |Notes
 - MobileCameraRig dùng để thiết lập tracking cho VR (head, left/right hand,....) và xử lý input từ VR.
 - Tracking VR (head, left/right hand,....) sẽ được xử lý thông qua Domain (Hand Tracking).
 - MobileVRModeProvider dùng để kiểm soát những phần xử lý khi chuyển đổi qua lại giữa non-VR mode và VR mode.
-```` 
+````
+
+![2-Flow_0_DomainXR](../../Images/HandTracking/2-Flow_0_DomainXR.png)
 
 3. Domain (Hand Tracking) 
 - <ins>MobileHandTrackingManager</ins>
@@ -71,6 +73,7 @@ Platform   |Notes
 - Tính toán góc xoay của bone poses (từng đốt ngón tay) dựa trên handlandmark.
 - Bind bone poses dùng để tạo ra trạng thái ban đầu cho phần tự build humanoid avatar.
 ````
+![2-Flow_1_MobileHand](../../Images/HandTracking/2-Flow_1_MobileHand.gif)
 
 - <ins>MobileHandRenderer</ins>
 ````
@@ -79,6 +82,7 @@ Platform   |Notes
   + Tay build từ bone poses (dùng để debug góc xoay của từng đốt ngón tay).
   + Tay build từ bine bone poses (dùng để setup cho phần build humanoid avatar).
 ````
+![2-Flow_2_MobileHandRenderer](../../Images/HandTracking/2-Flow_2_MobileHandRenderer.gif)
 
 - <ins>HandTrackingWrapper</ins>
 ````
@@ -218,20 +222,17 @@ void Update()
 ```
 - Chọn Enable Renderer cho tay trái
 ```
-
 ![1-Debug_4_EnableHandRender_1](../../Images/HandTracking/1-Debug_4_EnableHandRender_1.png)
 
 ```
 - Chọn Enable Renderer cho tay phải
 ```
-
 ![1-Debug_5_EnableHandRender_2](../../Images/HandTracking/1-Debug_5_EnableHandRender_2.png)
 
 ```
 - Giơ 2 tay trước front-facing camera của Editor
 ```
 ![1-Debug_6_EnableHandRender_3](../../Images/HandTracking/1-Debug_6_EnableHandRender_3.gif)
-
 
 8. <ins>Tìm chỗ hiện render của Bone Map</ins>
 ```
@@ -242,5 +243,4 @@ void Update()
 ```
 - Tìm vị trí hiện render BoneMap (Bone Poses) trên Scene View
 ```
-
 ![1-Debug_7_BoneMap_2](../../Images/HandTracking/1-Debug_7_BoneMap_2.gif)
