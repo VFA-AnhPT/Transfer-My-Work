@@ -240,7 +240,7 @@ void Update()
 ![1-Debug_7_BoneMap_1](../../Images/HandTracking/1-Debug_7_BoneMap_1.png)
 
 ```
-- Tìm vị trí hiện render BoneMap trên Scene View
+- Tìm vị trí hiện render BoneMap (Bone Poses) trên Scene View
 ```
 
 ![1-Debug_7_BoneMap_2](../../Images/HandTracking/1-Debug_7_BoneMap_2.gif)
