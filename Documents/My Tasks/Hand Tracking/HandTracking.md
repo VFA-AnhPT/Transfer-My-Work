@@ -52,7 +52,13 @@ Platform   |Notes
 - Khởi tạo hand tracking graph (MobileHandTrackingGraph). 
 - Khởi tạo camera device (MobileCameraDevice).
 - Camera device sẽ đọc texture frame từ webcam device.
-- Tracking graph sẽ nhận texture frame ở trên và trả về dữ liệu của landmark và handedness.
+````
+
+- <ins>MobileHandTrackingGraph</ins>
+````
+- Thiết lập settings và data cho graph từ HandTrackingConfig.cs
+- Graph sẽ nhận texture frame từ MobileHandTrackingDetection và xử lý.
+- Trả dữ liệu tracking bao gồm landmark và handedness về cho MobileHandTrackingDetection.
 ````
 
 - <ins>MobileHand</ins>
