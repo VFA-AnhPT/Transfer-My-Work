@@ -244,3 +244,12 @@ void Update()
 - Tìm vị trí hiện render BoneMap (Bone Poses) trên Scene View
 ```
 ![1-Debug_7_BoneMap_2](../../Images/HandTracking/1-Debug_7_BoneMap_2.gif)
+
+## Improvement Suggestions
+1. The appearance of jitter in the movement
+```
+- Trên device yếu, phần di chuyển của bàn tay không được mượt mà và bị giật (teleport) giữa các frame.
+- Giải pháp là áp dụng interpolation vào phần movement và rotation của hand giữa các frame.
+```
+![3-Improvements_1_HandMovement](../../Images/HandTracking/3-Improvements_1_HandMovement.gif)
+   
