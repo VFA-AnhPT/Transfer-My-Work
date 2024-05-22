@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 22-05-2024
+> Last updated: 23-05-2024
 > 
 > [Vietnamese]
 # Hand Tracking For Mobile
@@ -65,7 +65,7 @@ Platform   |Notes
 
 - <ins>MobileHand</ins>
 ````
-- Dùng data 2D của landmark để tính toán vị trí world.
+- Dùng data 2D của mediapipe landmark để tính toán vị trí world.
 - Ứng dụng vị trí world để tạo ra tay skeleton ảo (handlandmark).
 - Tính toán tracking depth để tất cả handlandmark có chiều sâu.
 - Tính toán vị trí và góc xoay của handlandmark anchor (wrist) để apply vào avatar's left/right hand anchor.
@@ -78,8 +78,8 @@ Platform   |Notes
 - <ins>MobileHandRenderer</ins>
 ````
 - Xử lý hiển thị render cho:
-  + Tay skeleton ảo (tay 3D di chuyển theo avatar hand).
-  + Tay build từ bone poses (dùng để debug góc xoay của từng đốt ngón tay).
+  + Tay skeleton ảo (mô phỏng dữ liệu đã được convert từ mediapipe landmark).
+  + Tay build từ bone poses (dùng để thể hiện góc xoay của từng đốt ngón tay).
   + Tay build từ bine bone poses (dùng để setup cho phần build humanoid avatar).
 ````
 ![2-Flow_2_MobileHandRenderer](../../Images/HandTracking/2-Flow_2_MobileHandRenderer.gif)
@@ -205,7 +205,7 @@ void Update()
 ```
 - Ấn vào icon camera (khoanh đỏ) như trong hình
 ```
-![1-Debug_1_FirstPersonView](../../Images/HandTracking/1-Debug_1_FirstPersonView.png)
+![1-Debug_1_FirstPersonView](../../Images/HandTracking/1-Debug_1_FirstPersonView.gif)
 
 6. <ins>Bật VR IK</ins>
 ```
