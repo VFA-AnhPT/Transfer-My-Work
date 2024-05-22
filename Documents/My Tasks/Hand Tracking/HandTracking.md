@@ -29,6 +29,18 @@ Platform   |Notes
 ```` 
 
 3. Domain (Hand Tracking) 
+- <ins>MobileHandTrackingManager</ins>
 ````
-- Dùng message pipe để lắng nghe sự kiện từ NetworkConnectController.
+- Đọc dữ liệu handlandmark và handedness từ MobileHandTrackingDetection
+- Khử nhiễu dữ liệu đầu vào bằng HandNoiseDetection
+- Phân chia dữ liệu đã khử cho tay trái và tay phải thông qua IMobileHand
 ````
+
+- <ins>HandNoiseDetection</ins>
+````
+- Đọc dữ liệu handlandmark và handedness.
+- Khử nhiễu bằng cách phát hiện sự thay đổi đột ngột của trạng thái tay (active/inactive) thì sẽ giữ nguyên trong x frame
+trước khi chấp nhận sự thay đổi.
+- Xử lý nhiễu cho cả 2 trường hợp là 1 tay và 2 tay.
+````
+
