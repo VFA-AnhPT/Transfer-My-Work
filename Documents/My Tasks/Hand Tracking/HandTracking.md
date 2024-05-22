@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 21-05-2024
+> Last updated: 22-05-2024
 > 
 > [Vietnamese]
 # Hand Tracking For Mobile
@@ -90,4 +90,157 @@ Platform   |Notes
 - Mục đích là để clean code cho phần Domain (Hand Tracking) và không cần quan tâm nhiều tới phần xử lý bên dưới.
 ````
 
+## How to debug in Editor
+1. <ins>Script symbol</ins>
+    - Thêm symbol DEBUG_HAND_TRACKING_MOBILE.
 
+![1-Debug_0_DefineSymbol](../../Images/HandTracking/1-Debug_0_DefineSymbol.png)
+   
+2. <ins>VRPlayerMovement.cs</ins>
+    - Thêm phần method ReflectTracking2 như bên dưới.
+    - Trong method Update bổ sung DEBUG_HAND_TRACKING_MOBILE symbol + method ReflectTracking2 như bên dưới (nếu chưa có).
+
+```cs
+void ReflectTracking2()
+{
+    if (Player.Self == null)
+        return;
+            
+    // // 頭部のリフレクトトラッキング (Reflect Tracking for Head)
+    // Player.Self.Head.SetPositionAndRotation(
+    //     cameraRig.Head.position,
+    //     cameraRig.Head.rotation);
+
+    // RightHandActive = true の場合にのみ右手のトラッキングを反映
+    // (Reflect Tracking for Right hand only when RightHandActive = true)
+    if (cameraRig.RightHandActive)
+    {
+        Player.Self.RightHand.SetPositionAndRotation(
+            cameraRig.RightHand.position,
+            cameraRig.RightHand.rotation);
+    }
+
+    // LeftHandActive = true の場合にのみ左手のトラッキングを反映
+    // (Reflect Tracking for Left hand only when LeftHandActive = true)
+    if (cameraRig.LeftHandActive)
+    {
+        Player.Self.LeftHand.SetPositionAndRotation(
+            cameraRig.LeftHand.position,
+            cameraRig.LeftHand.rotation);
+    }
+
+#if PLATFORM_WINDOWS
+            //SteamVR用フルトラの同期
+            XRICameraRig xRICameraRig = (XRICameraRig)cameraRig;
+            Player.Self.Pelvis.SetPositionAndRotation(
+                xRICameraRig.Waist.position,
+                xRICameraRig.Waist.rotation);
+            Player.Self.LeftFoot.SetPositionAndRotation(
+                xRICameraRig.LeftFoot.position,
+                xRICameraRig.LeftFoot.rotation);
+            Player.Self.RightFoot.SetPositionAndRotation(
+                xRICameraRig.RightFoot.position,
+                xRICameraRig.RightFoot.rotation);
+#endif
+}
+```
+
+```cs
+private void Update()
+{
+#if DEBUG_HAND_TRACKING_MOBILE
+    ReflectTracking2();
+#endif
+    UpdateWeightWhenLostOrResumeHandTracking();
+}
+```
+
+3. <ins>HandPoseController.cs</ins>
+    - Trong phần method LateTick bổ sung DEBUG_HAND_TRACKING_MOBILE symbol như bên dưới (nếu chưa có).
+
+```cs
+public void LateTick()
+{
+            if (Player.Self == null) return;
+#if !DEBUG_HAND_TRACKING_MOBILE
+            if (Player.Self.AvatarService.TrackingMode == TrackingMode.NonVR) return;
+#endif
+            if (Player.Self.AvatarService.Animator == null) return;
+            ...
+}           
+```
+
+4. <ins>MobileVRModeProvider.cs</ins>
+    - Trong phần method Update bổ sung DEBUG_HAND_TRACKING_MOBILE symbol như bên dưới (nếu chưa có).
+
+```cs
+void Update()
+{
+    if (xrStateManager.VREnabled.Value)
+    {
+        if (Api.IsCloseButtonPressed)
+            xrStateManager.ToggleVR();
+        
+        Api.UpdateScreenParams();
+    }
+    
+#if !DEBUG_HAND_TRACKING_MOBILE 
+    if (isHandTrackingInitialized)
+    {
+        var isVREnabled = xrStateManager.VREnabled.Value;
+        if (!isVREnabled)
+            HandTrackingWrapper.PauseHandTracking();
+        else 
+            HandTrackingWrapper.ResumeHandTracking();
+    }
+#endif
+}
+```
+
+5. <ins>Chuyển sang First Person View</ins>
+```
+- Ấn vào icon camera (khoanh đỏ) như trong hình
+```
+![1-Debug_1_FirstPersonView](../../Images/HandTracking/1-Debug_1_FirstPersonView.png)
+
+6. <ins>Bật VR IK</ins>
+```
+- Enable component VRIK
+```
+![1-Debug_2_EnableVRIK_1](../../Images/HandTracking/1-Debug_2_EnableVRIK_1.png)
+
+```
+- Giơ 2 tay trước front-facing camera của Editor
+```
+![1-Debug_3_EnableVRIK_2](../../Images/HandTracking/1-Debug_3_EnableVRIK_2.gif)
+
+7. <ins>Hiện render của bàn tay ảo</ins>
+```
+- Chọn Enable Renderer cho tay trái
+```
+
+![1-Debug_4_EnableHandRender_1](../../Images/HandTracking/1-Debug_4_EnableHandRender_1.png)
+
+```
+- Chọn Enable Renderer cho tay phải
+```
+
+![1-Debug_5_EnableHandRender_2](../../Images/HandTracking/1-Debug_5_EnableHandRender_2.png)
+
+```
+- Giơ 2 tay trước front-facing camera của Editor
+```
+![1-Debug_6_EnableHandRender_3](../../Images/HandTracking/1-Debug_6_EnableHandRender_3.gif)
+
+
+8. <ins>Tìm chỗ hiện render của Bone Map</ins>
+```
+- BoneMap nằm trong LeftHandMobile và RightHandMobile gameobject
+```
+![1-Debug_7_BoneMap_1](../../Images/HandTracking/1-Debug_7_BoneMap_1.png)
+
+```
+- Tìm vị trí hiện render BoneMap trên Scene View
+```
+
+![1-Debug_7_BoneMap_2](../../Images/HandTracking/1-Debug_7_BoneMap_2.gif)
