@@ -205,7 +205,7 @@ void Update()
 ```
 - Ấn vào icon camera (khoanh đỏ) như trong hình
 ```
-![1-Debug_1_FirstPersonView](../../Images/HandTracking/1-Debug_1_FirstPersonView.png)
+![1-Debug_1_FirstPersonView](../../Images/HandTracking/1-Debug_1_FirstPersonView.gif)
 
 6. <ins>Bật VR IK</ins>
 ```
