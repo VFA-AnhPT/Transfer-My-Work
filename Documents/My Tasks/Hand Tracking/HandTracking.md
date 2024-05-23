@@ -1,8 +1,8 @@
 > Author: TriHD
 > 
-> Last updated: 23-05-2024
+> Last updated: 24-05-2024
 > 
-> [Vietnamese]
+> [[Japan](./Languages/HandTracking_jp.md)/Vietnamese]
 # Hand Tracking For Mobile
 
 ## Related Platforms
