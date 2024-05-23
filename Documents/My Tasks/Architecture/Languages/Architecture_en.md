@@ -1,15 +1,15 @@
 > Author: TriHD
 > 
-> Last updated: 08-05-2024
+> Last updated: 24-05-2024
 > 
 > [English/[Vietnamese](../Architecture.md)]
 # Architecture
 
 1. Description
-![ArchitectureDescription](../../Images/Architecture/0-ArchitectureDescription_en.png)
+![ArchitectureDescription](../../../Images/Architecture/0-ArchitectureDescription_en.png)
    
 2. Diagram
-![ArchitectureDiagram](../../Images/Architecture/0-ArchitectureDiagram.png)
+![ArchitectureDiagram](../../../Images/Architecture/0-ArchitectureDiagram.png)
   
 # Example
 > Requirement: create a simple UI with a Dim background showing the text "Click To Start" and wait for a click event on the UI to turn it off.
@@ -22,9 +22,9 @@
 - This new Scope is enqueueed into the parent WXR_LifeTimeScope (in other words, WXR_LifeTimeScope is the parent of the new Scope).
 ````
 
-![1-SampleCode1](../../Images/Architecture/1-SampleCode1.png)
+![1-SampleCode1](../../../Images/Architecture/1-SampleCode1.png)
 
-![1-SampleCode2](../../Images/Architecture/1-SampleCode2.png)
+![1-SampleCode2](../../../Images/Architecture/1-SampleCode2.png)
 
 2. Domain Layer + Pub/Sub Message (StartGameState)
 ````
@@ -34,7 +34,7 @@
 - At this time, StartGameState is done completely.
 ````
 
-![1-SampleCode3](../../Images/Architecture/1-SampleCode3.png)
+![1-SampleCode3](../../../Images/Architecture/1-SampleCode3.png)
 
 3. Presentation Layer + Pub/Sub Message (StartGamePresenter)
 ````
@@ -43,14 +43,14 @@
 - The ShowUIAsync method will simply wait for the click event on the UI and finish.
 ````
 
-![1-SampleCode4](../../Images/Architecture/1-SampleCode4.png)
+![1-SampleCode4](../../../Images/Architecture/1-SampleCode4.png)
 
 4. View Layer (StartGameUI)
 ````
 - This layer only contains view script (often Monobehaviour) and does not contain any domain or control logic inside.
 ````
 
-![1-SampleCode5](../../Images/Architecture/1-SampleCode5.png)
+![1-SampleCode5](../../../Images/Architecture/1-SampleCode5.png)
 
 # Demo
 ````
