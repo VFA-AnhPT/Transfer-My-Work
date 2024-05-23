@@ -69,7 +69,7 @@ Platform   |Notes
 - Ứng dụng vị trí world để tạo ra tay skeleton ảo (handlandmark).
 - Tính toán tracking depth để tất cả handlandmark có chiều sâu.
 - Tính toán vị trí và góc xoay của handlandmark anchor (wrist) để apply vào avatar's left/right hand anchor.
-- Tìm bone poses và bind bone poses.
+- Tìm bone poses và bind bone poses (bone pose phải tự build dựa trên phần tính toán ở trên).
 - Tính toán góc xoay của bone poses (từng đốt ngón tay) dựa trên handlandmark.
 - Bind bone poses dùng để tạo ra trạng thái ban đầu cho phần tự build humanoid avatar.
 ````
