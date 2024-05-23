@@ -2,7 +2,7 @@
 > 
 > Last updated: 08-05-2024
 >
->[[English](../Eng_Ver/Architecture_en.md)/Vietnamese]
+>[[English](./Languages/Architecture_en.md)/Vietnamese]
 # Architecture
 
 1. Description
