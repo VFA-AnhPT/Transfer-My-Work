@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 09-05-2024
+> Last updated: 24-05-2024
 > 
 > [English/[Vietnamese](../PlatformSwitcher.md)]
 # Overview
@@ -12,7 +12,7 @@
 
   > XRSynthesis/Multiplatform/Switch/<target_platform>
 
-![SwitchPlatforms](../../Images/PlatformSwitcher/0-SwitchPlatforms.png)
+![SwitchPlatforms](../../../Images/PlatformSwitcher/0-SwitchPlatforms.png)
 
 Currently we are working on the following platforms
 ````
@@ -31,7 +31,7 @@ Further platforms to work on
 
 1. When switching platforms, there are some changes that will occur in the settings within the XRSynthesis prefab.
 
-![XRSynthesisPrefab](../../Images/PlatformSwitcher/2-XRSynthesisPrefab.png)
+![XRSynthesisPrefab](../../../Images/PlatformSwitcher/2-XRSynthesisPrefab.png)
 
 2. These settings below will change
 ````
@@ -41,7 +41,7 @@ Further platforms to work on
 - InitializeObjectAsset
 ````
 
-![XRSynthesisSettings](../../Images/PlatformSwitcher/2-XRSynthesisSettings.png)
+![XRSynthesisSettings](../../../Images/PlatformSwitcher/2-XRSynthesisSettings.png)
 
 3. About AvatarInitializeSettingsScriptable
 ```` 
@@ -49,7 +49,7 @@ Further platforms to work on
 - AvatarVRIKDataSetting is used to store IK Anchor data for the avatar body (head, hand, chest,...) when using controller or hand tracking.
 ````
 
-![AvatarInitializeSettingsScriptable](../../Images/PlatformSwitcher/3-AvatarInitializeSettingsScriptable.png)
+![AvatarInitializeSettingsScriptable](../../../Images/PlatformSwitcher/3-AvatarInitializeSettingsScriptable.png)
 
 4. About CameraRigSettings
 ```` 
@@ -57,7 +57,7 @@ Further platforms to work on
 - Camera rig prefab will be used to setup VR components (VR camera, VR tracking mode, VR input...) for the current platform.
 ````    
 
-![CameraRig](../../Images/PlatformSwitcher/3-CameraRig.png)
+![CameraRig](../../../Images/PlatformSwitcher/3-CameraRig.png)
 
 5. About HandPoseSettings
 ````
@@ -66,13 +66,13 @@ Further platforms to work on
 - The Hand Poses section is to apply finger poses for specific actions when using the controller.
 ````
 
-![HandPoseSettings](../../Images/PlatformSwitcher/3-HandPoseSettings.png)
+![HandPoseSettings](../../../Images/PlatformSwitcher/3-HandPoseSettings.png)
 
 6. About InitializeObjectAsset
 ````
 - Assgin essential prefabs to handle UI, event system, data manager and so on.
 ````
-![3-InitializeObjectAsset](../../Images/PlatformSwitcher/3-InitializeObjectAsset.png)
+![3-InitializeObjectAsset](../../../Images/PlatformSwitcher/3-InitializeObjectAsset.png)
 
 
 ## 3.	Platform Packages
@@ -84,11 +84,11 @@ When switching to any platform, essential packages will be installed from two so
 
 1. Install from LocalPackages
    
-![1-LocalPackages_](../../Images/PlatformSwitcher/1-LocalPackages_.png)
+![1-LocalPackages_](../../../Images/PlatformSwitcher/1-LocalPackages_.png)
 
 - LocalPackages folder content
 
-![1-LocalPackages](../../Images/PlatformSwitcher/1-LocalPackages.png)
+![1-LocalPackages](../../../Images/PlatformSwitcher/1-LocalPackages.png)
 
 ````
 - Each platform will require its own packages
@@ -109,31 +109,31 @@ Each platform will perform these changes below and they will be different from o
 
 1. Custom Build
 
-![5-CustomBuild](../../Images/PlatformSwitcher/5-CustomBuild.png)
+![5-CustomBuild](../../../Images/PlatformSwitcher/5-CustomBuild.png)
 
 2. Graphic Api
 
-![5-GraphicApi](../../Images/PlatformSwitcher/5-GraphicApi.png)
+![5-GraphicApi](../../../Images/PlatformSwitcher/5-GraphicApi.png)
 
 3. Platform Data
 
-![5-PlatformData](../../Images/PlatformSwitcher/5-PlatformData.png)
+![5-PlatformData](../../../Images/PlatformSwitcher/5-PlatformData.png)
 
 4. Player Platform Settings
 
-![5-PlayerPlatformSettings](../../Images/PlatformSwitcher/5-PlayerPlatformSettings.png)
+![5-PlayerPlatformSettings](../../../Images/PlatformSwitcher/5-PlayerPlatformSettings.png)
 
 5. Script Define Symbol
 
-![5-ScriptDefineSymbol](../../Images/PlatformSwitcher/5-ScriptDefineSymbol.png)
+![5-ScriptDefineSymbol](../../../Images/PlatformSwitcher/5-ScriptDefineSymbol.png)
 
 6. Targe/Minimum Api Level
    
-![5-TargerAndMinimumApi](../../Images/PlatformSwitcher/5-TargerAndMinimumApi.png)
+![5-TargerAndMinimumApi](../../../Images/PlatformSwitcher/5-TargerAndMinimumApi.png)
 
 7. XR Management
    
-![5-XRManagement](../../Images/PlatformSwitcher/5-XRManagement.png)
+![5-XRManagement](../../../Images/PlatformSwitcher/5-XRManagement.png)
 
 ## Implementation
 ````
