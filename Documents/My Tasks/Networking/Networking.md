@@ -2,7 +2,7 @@
 > 
 > Last updated: 10-05-2024
 > 
-> [[English](../Eng_Ver/Networking_en.md)/Vietnamese]
+> [[English](./Languages/Networking_en.md)/Vietnamese]
 # Networking
 
 ## Configuration
