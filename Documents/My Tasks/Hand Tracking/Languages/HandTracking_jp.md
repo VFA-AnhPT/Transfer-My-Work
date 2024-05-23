@@ -18,91 +18,90 @@ Platform   |Notes
 ### Description
 1. XRSynthesisLifetimeScope (VContainer)
 ````
-- Đăng ký ICameraRig, ICameraRig được kế thừa bởi MobileCameraRig.
-- Đăng ký IVRModeProvider, IVRModeProvider được kế thừa bởi MobileVRModeProvider.
+- ICameraRigを登録します。ICameraRigがMobileCameraRigに継承されます。
+- IVRModeProvider を登録します。IVRModeProvider は MobileVRModeProvider に継承されます。
 ````
 
 2. Domain (XR)
 ````
-- MobileCameraRig dùng để thiết lập tracking cho VR (head, left/right hand,....) và xử lý input từ VR.
-- Tracking VR (head, left/right hand,....) sẽ được xử lý thông qua Domain (Hand Tracking).
-- MobileVRModeProvider dùng để kiểm soát những phần xử lý khi chuyển đổi qua lại giữa non-VR mode và VR mode.
+- MobileCameraRig は、VR のトラッキング (頭、左手/右手など) を設定し、VR からの入力を処理するために使用されます。 
+- トラッキング VR (頭、左手/右手など) はドメイン (ハンド トラッキング) を通じて処理されます。 
+- MobileVRModeProviderは、nonVRモードとVRモードを切り替える際の処理を制御するために使用されます。
 ````
-
 ![2-Flow_0_DomainXR](../../../Images/HandTracking/2-Flow_0_DomainXR.png)
 
 3. Domain (Hand Tracking) 
 - <ins>MobileHandTrackingManager</ins>
 ````
-- Đọc dữ liệu handlandmark và handedness từ MobileHandTrackingDetection.
-- Khử nhiễu dữ liệu đầu vào bằng HandNoiseDetection.
-- Phân chia dữ liệu đã khử cho tay trái và tay phải thông qua IMobileHand.
-- Cập nhật xử lý cho tay trái/phải.
+- MobileHandTrackingDetection から handlandmark と handedness を読み取ります。
+- HandNoiseDetection を使用して入力データのノイズを除去します。
+- IMobileHand 経由でノイズ除去されたデータを左手と右手に分割します。
+- 左手と右手のハンドリングを更新します。 
 ````
 
 - <ins>HandNoiseDetection</ins>
 ````
-- Đọc dữ liệu handlandmark và handedness.
-- Khử nhiễu bằng cách:
-  + Phát hiện sự thay đổi đột ngột của trạng thái tay (active/inactive)
-  + Giữ nguyên trong x frame (x sẽ được điều chỉnh tùy theo cảm nhận khi test) trước khi chấp nhận sự thay đổi. 
-- Xử lý nhiễu cho cả 2 trường hợp là 1 tay và 2 tay.
+- handlandmark と handedness のデータを読み取ります。
+- 次の方法でノイズを除去します。
+  + 手の状態の突然の変化を検出します。(active/inactive)
+  + 変更を受け入れる前に、x フレームを同じにしておきます (x はテスト時の感触に応じて調整されます)。
+- 片手と両手どちらの場合もノイズ処理します。
 ````
 
 - <ins>MobileHandTrackingDetection</ins>
 ````
-- Khởi tạo hand tracking graph (MobileHandTrackingGraph). 
-- Khởi tạo camera device (MobileCameraDevice).
-- Camera device sẽ đọc texture frame từ webcam device.
+- ハンド トラッキング グラフ (MobileHandTrackingGraph) を初期化します。
+- カメラデバイス(MobileCameraDevice)を初期化します。
+- カメラ デバイスは、Web カメラ デバイスからテクスチャ フレームを読み取ります。
 ````
 
 - <ins>MobileHandTrackingGraph</ins>
 ````
-- Thiết lập settings và data cho graph từ HandTrackingConfig.cs
-- Graph sẽ nhận texture frame từ MobileHandTrackingDetection và xử lý.
-- Trả dữ liệu tracking bao gồm landmark và handedness về cho MobileHandTrackingDetection.
+- HandTrackingConfig.cs からグラフの設定とデータをセットアップします。
+- グラフはMobileHandTrackingDetectionからテクスチャフレームを受け取り、それを処理します
+- Landmark や handedness を含むトラッキングデータを MobileHandTrackingDetection に返します。
 ````
 
 - <ins>MobileHand</ins>
 ````
-- Dùng data 2D của mediapipe landmark để tính toán vị trí world.
-- Ứng dụng vị trí world để tạo ra tay skeleton ảo (handlandmark).
-- Tính toán tracking depth để tất cả handlandmark có chiều sâu.
-- Tính toán vị trí và góc xoay của handlandmark anchor (wrist) để apply vào avatar's left/right hand anchor.
-- Tìm bone poses và bind bone poses.
-- Tính toán góc xoay của bone poses (từng đốt ngón tay) dựa trên handlandmark.
-- Bind bone poses dùng để tạo ra trạng thái ban đầu cho phần tự build humanoid avatar.
+- landmark mediapipe landmark の 2D データを使用してワールド位置を計算します
+- ワールド位置を適用して仮想 skeleton ハンド (ハンドランドマーク) を作成します。
+- すべてのハンドランドマークに深度があるようにトラッキング深度を計算します。
+- アバターの左手/右手に適用するのためハンドランドマーク アンカー (手首) の位置と回転角度を計算します。
+- bone poses と bind bone poses を検索します(バインド/ボーン ポーズは、上記の計算に基づいて自分で構築する必要があります)。
+- ハンドランドマークに基づいてボーンポーズ(各関節)の回転角度を計算します。
+- バインド ボーン ポーズは、humanoid avatar ビルドの初期状態を作成するために使用されます。
 ````
 ![2-Flow_1_MobileHand](../../../Images/HandTracking/2-Flow_1_MobileHand.gif)
 
 - <ins>MobileHandRenderer</ins>
 ````
-- Xử lý hiển thị render cho:
-  + Tay skeleton ảo (mô phỏng dữ liệu đã được convert từ mediapipe landmark).
-  + Tay build từ bone poses (dùng để thể hiện góc xoay của từng đốt ngón tay).
-  + Tay build từ bine bone poses (dùng để setup cho phần build humanoid avatar).
+- 以下のレンダリングを処理します：
+  + 仮想スケルトンハンド (メディアパイプランドマークから変換されたデータをシミュレートします)。
+  + bone poses から構築された手は、各関節の回転角度を示すために使用されます。
+  + bine bone poses からのビルド手は、humanoid avatarビルドパーツのセットアップに使用されます。
 ````
 ![2-Flow_2_MobileHandRenderer](../../../Images/HandTracking/2-Flow_2_MobileHandRenderer.gif)
 
 - <ins>HandTrackingWrapper</ins>
 ````
-- Tạo ra những api cần thiết cho việc truy cập liên quan đến tracking:
-  + Lấy trạng thái tay (active/inactive).
-  + Lấy bone pose/bind bone pose.
-  + Start/Pause/Stop/Resume xử lý hand tracking.
-  + Những phần xử lý khác nếu cần thì implement trong phần wrapper này.
-- Mục đích là để clean code cho phần Domain (Hand Tracking) và không cần quan tâm nhiều tới phần xử lý bên dưới.
+- Tトラッキング関連のアクセスに必要な 各API を作成する：
+  + ハンドのステータス (アクティブ/非アクティブ) を取得します。
+  + bone pose/bind bone poseを取得します。
+  + 開始/一時停止/停止/再開（ Start/Pause/Stop/Resume）はハンドトラッキングを処理します。
+  + 必要に応じて、その他の処理部分はこのラッパー（ wrapper ）に実装されます。
+- 目的はドメイン (ハンド トラッキング) 部分のコードをクリーンにすることであり、以下の処理にはあまり注意を払う必要はありません。
 ````
 
 ## How to debug in Editor
 1. <ins>Script symbol</ins>
-    - Thêm symbol DEBUG_HAND_TRACKING_MOBILE.
+    - シンボル DEBUG_HAND_TRACKING_MOBILE を追加
 
 ![1-Debug_0_DefineSymbol](../../../Images/HandTracking/1-Debug_0_DefineSymbol.png)
    
 2. <ins>VRPlayerMovement.cs</ins>
-    - Thêm phần method ReflectTracking2 như bên dưới.
-    - Trong method Update bổ sung DEBUG_HAND_TRACKING_MOBILE symbol + method ReflectTracking2 như bên dưới (nếu chưa có).
+    - 以下のように ReflectTracking2 メソッド セクションを追加します
+    - 更新 メソッドに、以下のように DEBUG_HAND_TRACKING_MOBILE シンボルと ReflectTracking2 メソッドを追加します (まだ存在しない場合)。
 
 ```cs
 void ReflectTracking2()
@@ -160,7 +159,7 @@ private void Update()
 ```
 
 3. <ins>HandPoseController.cs</ins>
-    - Trong phần method LateTick bổ sung DEBUG_HAND_TRACKING_MOBILE symbol như bên dưới (nếu chưa có).
+    - LateTick メソッド セクションに、以下のように DEBUG_HAND_TRACKING_MOBILE シンボルを追加します (まだ存在しない場合)。
 
 ```cs
 public void LateTick()
@@ -175,7 +174,7 @@ public void LateTick()
 ```
 
 4. <ins>MobileVRModeProvider.cs</ins>
-    - Trong phần method Update bổ sung DEBUG_HAND_TRACKING_MOBILE symbol như bên dưới (nếu chưa có).
+    - 更新メソッドセクションに、以下のように DEBUG_HAND_TRACKING_MOBILE シンボルを追加します (まだ存在しない場合)。
 
 ```cs
 void Update()
@@ -201,55 +200,55 @@ void Update()
 }
 ```
 
-5. <ins>Chuyển sang First Person View</ins>
+5. <ins>人称視点に切り替える</ins>
 ```
-- Ấn vào icon camera (khoanh đỏ) như trong hình
+- 以下の画像のようなカメラアイコン（赤丸）をクリックします。
 ```
 ![1-Debug_1_FirstPersonView](../../../Images/HandTracking/1-Debug_1_FirstPersonView.gif)
 
 6. <ins>Bật VR IK</ins>
 ```
-- Enable component VRIK
+- VRIK コンポーネントを有効にする
 ```
 ![1-Debug_2_EnableVRIK_1](../../../Images/HandTracking/1-Debug_2_EnableVRIK_1.png)
 
 ```
-- Giơ 2 tay trước front-facing camera của Editor
+- エディターの正面カメラの前で両手を上げる
 ```
 ![1-Debug_3_EnableVRIK_2](../../../Images/HandTracking/1-Debug_3_EnableVRIK_2.gif)
 
-7. <ins>Hiện render của bàn tay ảo</ins>
+7. <ins>仮想手のレンダリングを表示</ins>
 ```
-- Chọn Enable Renderer cho tay trái
+- 左手のレンダラー（ Renderer）を有効にするを選択します
 ```
 ![1-Debug_4_EnableHandRender_1](../../../Images/HandTracking/1-Debug_4_EnableHandRender_1.png)
 
 ```
-- Chọn Enable Renderer cho tay phải
+- 右手のレンダラー（ Renderer）を有効にするを選択します
 ```
 ![1-Debug_5_EnableHandRender_2](../../../Images/HandTracking/1-Debug_5_EnableHandRender_2.png)
 
 ```
-- Giơ 2 tay trước front-facing camera của Editor
+- エディターの正面カメラの前で両手を上げる
 ```
 ![1-Debug_6_EnableHandRender_3](../../../Images/HandTracking/1-Debug_6_EnableHandRender_3.gif)
 
-8. <ins>Tìm chỗ hiện render của Bone Map</ins>
+8. <ins>ボーン マップ レンダリングが表示される場所を見つける</ins>
 ```
-- BoneMap nằm trong LeftHandMobile và RightHandMobile gameobject
+- BoneMap は LeftHandMobile および RightHandMobile ゲームオブジェクトにあります
 ```
 ![1-Debug_7_BoneMap_1](../../../Images/HandTracking/1-Debug_7_BoneMap_1.png)
 
 ```
-- Tìm vị trí hiện render BoneMap (Bone Poses) trên Scene View
+- シーン ビューで BoneMap (Bone Poses) のレンダリング位置を見つけます。
 ```
 ![1-Debug_7_BoneMap_2](../../../Images/HandTracking/1-Debug_7_BoneMap_2.gif)
 
 ## Improvement Suggestions
 1. The appearance of jitter in the movement
 ```
-- Trên device yếu, phần di chuyển của bàn tay không được mượt mà và bị giật (teleport) giữa các frame.
-- Giải pháp là áp dụng interpolation vào phần movement và rotation của hand giữa các frame.
+- 弱いデバイスでは、手の動きがスムーズでなく、フレーム間でガクガク・ブルブル (テレポート) します。
+- 解決策は、フレーム間の手の動きと回転に補間(interpolation)を適用することです。
 ```
 ![3-Improvements_1_HandMovement](../../../Images/HandTracking/3-Improvements_1_HandMovement.gif)
    
