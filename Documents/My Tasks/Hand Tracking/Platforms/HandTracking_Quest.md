@@ -43,21 +43,23 @@ Platform   |Notes
 
 - <ins>OVRSkeleton</ins>
 ````
-- Dùng để tạo và truy xuất bone data của hand và body.
+- Tạo và truy xuất bone poses và bind bone poses của hand và body.
 ````
-![1-Flow_](../../../Images/HandTracking/Quest/1-Flow_.png)
+![1-Flow_5_OVRSkeleton](../../../Images/HandTracking/Quest/1-Flow_5_OVRSkeleton.png)
 
 - <ins>OVRSkeletonRenderer</ins>
 ````
 - Dùng để hiển thị cấu trúc xương của tay ảo.
 ````
-![1-Flow_](../../../Images/HandTracking/Quest/1-Flow_.png)
+![1-Flow_3_OVRSkeletonRenderer](../../../Images/HandTracking/Quest/1-Flow_3_OVRSkeletonRenderer.png)
+![1-Flow_6_OVRSkeletonRenderer_Debug_1](../../../Images/HandTracking/Quest/1-Flow_6_OVRSkeletonRenderer_Debug_1.gif)
 
 - <ins>OVRMesh/OVRMeshRenderer</ins>
 ````
 - Dùng để tạo và hiển thị mesh của tay ảo.
 ````
-![1-Flow_](../../../Images/HandTracking/Quest/1-Flow_.png)
+![1-Flow_7_OVRMeshRenderer_Debug_3](../../../Images/HandTracking/Quest/1-Flow_7_OVRMeshRenderer_Debug_3.png)
+![1-Flow_6_OVRMeshRenderer_Debug_2](../../../Images/HandTracking/Quest/1-Flow_6_OVRMeshRenderer_Debug_2.gif)
 
 ## Apply Calculated Hand Tracking Data To Avatar's Hand Model
 - <ins>HandPoseBuilder</ins>
