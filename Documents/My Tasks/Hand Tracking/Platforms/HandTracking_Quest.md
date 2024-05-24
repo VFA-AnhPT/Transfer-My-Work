@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 21-05-2024
+> Last updated: 24-05-2024
 > 
 > [Vietnamese]
 # Hand Tracking For Quest
@@ -13,7 +13,7 @@ Platform   |Notes
 
 ## Flow
 ### Diagram
-![0-HandTrackingDiagram](../../Images/HandTracking/Quest/0-HandTrackingDiagram.png)
+![0-HandTrackingDiagram](../../../Images/HandTracking/Quest/0-HandTrackingDiagram.png)
 
 ### Description
 
