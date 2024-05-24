@@ -63,7 +63,7 @@ Platform   |Notes
 ````
 - Dùng để build mới một humanoid avatar bằng cách:
   + Xây khung xương body từ root.
-  + Xây khung xương hand và fingers.
+  + Xây khung xương hand và fingers (fingers dùng bind bone poses để xây).
 - Áp dụng local rotation đến từ bone poses được build từ OVRSkeleton.
 - Chuyển đổi humanoid avatar thành pose handler để tính toán giá trị pose muscles sau này ở HandPoseInterpolator.
 ````
