@@ -100,6 +100,10 @@ Platform   |Notes
 - Mục đích là để clean code cho phần Domain (Hand Tracking) và không cần quan tâm nhiều tới phần xử lý bên dưới.
 ````
 
+## Apply hand tracking data into avatar's hand model
+- Cơ chế xử lý tương tự như Quest/Vive.
+- Xem phần HandPoseBuilder và HandPoseInterpolator ở [Quest](./Platforms/HandTracking_Quest.md)
+
 ## How to debug in Editor
 1. <ins>Script symbol</ins>
     - Thêm symbol DEBUG_HAND_TRACKING_MOBILE.
