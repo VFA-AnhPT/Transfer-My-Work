@@ -13,6 +13,7 @@ Platform   |Notes
 
 ## Flow
 ### Diagram
-
+![0-HandTrackingDiagram](../../Images/HandTracking/Quest/0-HandTrackingDiagram.png)
 
 ### Description
+
