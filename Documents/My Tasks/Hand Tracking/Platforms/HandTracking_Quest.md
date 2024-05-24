@@ -19,6 +19,7 @@ Platform   |Notes
 1. XRSynthesisLifetimeScope (VContainer)
 ````
 - Đăng ký ICameraRig, ICameraRig được kế thừa bởi MetaQuestCameraRig.
+- Đăng ký HandPoseController như một entry point và cập nhật xuyên suốt.
 ````
 
 2. Domain (XR)
