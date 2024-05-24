@@ -59,6 +59,7 @@ Platform   |Notes
 ````
 ![1-Flow_](../../../Images/HandTracking/Quest/1-Flow_.png)
 
+## Apply Calculated Hand Tracking Data To Avatar's Hand Model
 - <ins>HandPoseBuilder</ins>
 ````
 - Dùng để build mới một humanoid avatar bằng cách:
