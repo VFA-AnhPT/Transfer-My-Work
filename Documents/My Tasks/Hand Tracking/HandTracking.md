@@ -2,7 +2,7 @@
 > 
 > Last updated: 24-05-2024
 > 
-> [[Japan](./Languages/HandTracking_jp.md)/Vietnamese]
+> [Vietnamese]
 # Hand Tracking For Mobile
 
 ## Related Platforms
@@ -54,6 +54,12 @@ Platform   |Notes
 - Khởi tạo hand tracking graph (MobileHandTrackingGraph). 
 - Khởi tạo camera device (MobileCameraDevice).
 - Camera device sẽ đọc texture frame từ webcam device.
+````
+
+- <ins>MobileCameraDevice</ins>
+````
+- Xử lý phần detect webcam devices (rear, front, wide angle hay ultra wide angle...).
+- Start/Run/Pause/Resume/Stop phần xử lý webcam texture (dùng để làm input cho texture frame bên tracking graph).
 ````
 
 - <ins>MobileHandTrackingGraph</ins>
