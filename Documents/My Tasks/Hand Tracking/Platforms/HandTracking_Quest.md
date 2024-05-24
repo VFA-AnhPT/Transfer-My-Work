@@ -69,7 +69,7 @@ Platform   |Notes
 
 - <ins>HandPoseInterpolator</ins>
 ````
-- Cập nhật hand pose của cả 2 tay.
+- Cập nhật hand pose của cả 2 tay (cho cả controller mode và hand tracking mode).
 - Giá trị hand pose của từng tay sẽ là tổng pose muscles mặc định (từ config) và pose muscles từ hand pose builder cộng lại.
 ````
 ![1-Flow_4_HandPoseInterpolator](../../../Images/HandTracking/Quest/1-Flow_4_HandPoseInterpolator.png)
