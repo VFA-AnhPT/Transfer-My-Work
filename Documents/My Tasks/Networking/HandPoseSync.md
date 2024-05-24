@@ -10,6 +10,21 @@
 
 ## Flow
 ### Diagram
+![0-HandPoseSyncDiagram](../../Images/Networking/HandPoseSync/0-HandPoseSyncDiagram.png)
 
 ### Description
+1. PhotonPlayer/FishNetPayer (Domain)
+````
+````
 
+2. AvatarAnimationSync/FishNetAvatarAnimationSync (Domain)
+````
+```` 
+
+3. TrackingModeSync/FishNetTrackingModeSync (Domain)
+````
+````
+
+4. HandPoseSync/FishNetHandPoseSync (Domain)
+````
+````
