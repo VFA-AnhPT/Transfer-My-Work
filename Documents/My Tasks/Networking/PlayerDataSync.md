@@ -12,11 +12,11 @@
 ### Diagram
 1. Photon
    
-![0-HandPoseSync_Photon_Diagram](../../Images/Networking/HandPoseSync/0-HandPoseSync_Photon_Diagram.png)
+![0-HandPoseSync_Photon_Diagram](../../Images/Networking/PlayerDataSync/0-HandPoseSync_Photon_Diagram.png)
 
 2. Fishnet
    
-![0-HandPoseSync_Fishnet_Diagram](../../Images/Networking/HandPoseSync/0-HandPoseSync_Fishnet_Diagram.png)
+![0-HandPoseSync_Fishnet_Diagram](../../Images/Networking/PlayerDataSync/0-HandPoseSync_Fishnet_Diagram.png)
    
 ### Description
 1. PhotonPlayer/FishNetPayer (Domain Photon/Fishnet)
@@ -31,7 +31,7 @@
   + Ví dụ như Vive và Quest có config rotation/position offset cho IKAnchor khác nhau.
     => Nếu đang ở Quest và sync parent của IKAnchor (Left/RightHand...) sẽ dẫn tới platform Vive sẽ nhận giá trị sai.
 ````
-![2-Description_1_PhotonPlayer](../../Images/Networking/HandPoseSync/2-Description_1_PhotonPlayer.png)
+![2-Description_1_PhotonPlayer](../../Images/Networking/PlayerDataSync/2-Description_1_PhotonPlayer.png)
 
 2. AvatarAnimationSync/FishNetAvatarAnimationSync (Domain Photon/Fishnet)
 ````
@@ -44,7 +44,7 @@
   + Nếu tracking mode là VR mode ở dạng ThreePointTracking (1 head + 2 hands) hoặc FullTracking thì enable VRIK component.
   + Nếu tracking mode là Non-VR thì disable VRIK component.
 ````
-![2-Description_2_EnableVRIK](../../Images/Networking/HandPoseSync/2-Description_2_EnableVRIK.png)
+![2-Description_2_EnableVRIK](../../Images/Networking/PlayerDataSync/2-Description_2_EnableVRIK.png)
 
 4. HandPoseSync/FishNetHandPoseSync (Domain Photon/Fishnet)
 ````
