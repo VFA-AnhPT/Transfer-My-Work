@@ -3,7 +3,7 @@
 > Last updated: 26-05-2024
 > 
 > [Vietnamese]
-# Hand Pose Sync
+# Player Data Sync
 
 ## Before We Start
 - Hãy đọc hiểu phần Networking trước khi tiếp tục: [Click here](./Networking.md)
@@ -36,7 +36,7 @@
 2. AvatarAnimationSync/FishNetAvatarAnimationSync (Domain Photon/Fishnet)
 ````
 - Sync trạng thái của avatar animation. Ví dụ như jump action.
-```` 
+````
 
 3. TrackingModeSync/FishNetTrackingModeSync (Domain Photon/Fishnet)
 ````
@@ -45,7 +45,6 @@
   + Nếu tracking mode là Non-VR thì disable VRIK component.
 ````
 ![2-Description_2_EnableVRIK](../../Images/Networking/HandPoseSync/2-Description_2_EnableVRIK.png)
-
 
 4. HandPoseSync/FishNetHandPoseSync (Domain Photon/Fishnet)
 ````
