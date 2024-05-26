@@ -1,8 +1,8 @@
 > Author: TriHD
 > 
-> Last updated: 09-05-2024
+> Last updated: 26-05-2024
 > 
-> [[English](../Eng_Ver/PlatformSwitcher_en.md)/Vietnamese]
+> [[English](./Languages/PlatformSwitcher_en.md)/Vietnamese]
 # Overview
 
 ## Switch platform
