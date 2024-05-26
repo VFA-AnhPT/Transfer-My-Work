@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 24-05-2024
+> Last updated: 26-05-2024
 > 
 > [Vietnamese]
 # Hand Tracking For Mobile
