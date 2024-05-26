@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 10-05-2024
+> Last updated: 26-05-2024
 > 
 > [[English](./Languages/Networking_en.md)/Vietnamese]
 # Networking
@@ -67,6 +67,9 @@
 - FishNetTrackingModeSync.cs
 - FishNetHandPoseSync.cs
 ````
+
+## How To Sync Player Data 
+- Xem phần **How To Sync Player Data** ở [Player Data Sync](./PlayerDataSync.md)
 
 ## Setup
 
