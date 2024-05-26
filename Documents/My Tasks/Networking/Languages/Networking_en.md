@@ -45,6 +45,7 @@
 ````
 - Use message pipe to listen for event from NetworkConnectController.
 ````
+![2-NetworkConnectArea_1](../../../Images/Networking/Network/2-NetworkConnectArea_1.png)
 
 4. INetworkManager (PhotonManger/FishNetManager) (Domain)
 ````
