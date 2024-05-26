@@ -44,6 +44,7 @@
 ````
 - Dùng message pipe để lắng nghe sự kiện từ NetworkConnectController.
 ````
+![2-NetworkConnectArea_1](../../Images/Networking/Network/2-NetworkConnectArea_1.png)
 
 4. INetworkManager (PhotonManger/FishNetManager) (Domain)
 ````
