@@ -13,7 +13,7 @@ Platform   |Notes
 
 ## Flow
 ### Diagram
-![0-HandTrackingDiagram](../../Images/HandTracking/0-HandTrackingDiagram.png)
+![0-HandTrackingDiagram](../../Images/HandTracking/Mobile/0-HandTrackingDiagram.png)
 
 ### Description
 1. XRSynthesisLifetimeScope (VContainer)
@@ -29,7 +29,7 @@ Platform   |Notes
 - MobileVRModeProvider dùng để kiểm soát những phần xử lý khi chuyển đổi qua lại giữa non-VR mode và VR mode.
 ````
 
-![2-Flow_0_DomainXR](../../Images/HandTracking/2-Flow_0_DomainXR.png)
+![2-Flow_0_DomainXR](../../Images/HandTracking/Mobile/2-Flow_0_DomainXR.png)
 
 3. Domain (Hand Tracking) 
 - <ins>MobileHandTrackingManager</ins>
@@ -79,7 +79,7 @@ Platform   |Notes
 - Tính toán góc xoay của bone poses (từng đốt ngón tay) dựa trên handlandmark.
 - Bind bone poses dùng để tạo ra trạng thái ban đầu cho phần tự build humanoid avatar.
 ````
-![2-Flow_1_MobileHand](../../Images/HandTracking/2-Flow_1_MobileHand.gif)
+![2-Flow_1_MobileHand](../../Images/HandTracking/Mobile/2-Flow_1_MobileHand.gif)
 
 - <ins>MobileHandRenderer</ins>
 ````
@@ -88,7 +88,7 @@ Platform   |Notes
   + Tay build từ bone poses (dùng để thể hiện góc xoay của từng đốt ngón tay).
   + Tay build từ bine bone poses (dùng để setup cho phần build humanoid avatar).
 ````
-![2-Flow_2_MobileHandRenderer](../../Images/HandTracking/2-Flow_2_MobileHandRenderer.gif)
+![2-Flow_2_MobileHandRenderer](../../Images/HandTracking/Mobile/2-Flow_2_MobileHandRenderer.gif)
 
 - <ins>HandTrackingWrapper</ins>
 ````
@@ -110,7 +110,7 @@ Platform   |Notes
 1. <ins>Script symbol</ins>
     - Thêm symbol DEBUG_HAND_TRACKING_MOBILE.
 
-![1-Debug_0_DefineSymbol](../../Images/HandTracking/1-Debug_0_DefineSymbol.png)
+![1-Debug_0_DefineSymbol](../../Images/HandTracking/Mobile/1-Debug_0_DefineSymbol.png)
    
 2. <ins>VRPlayerMovement.cs</ins>
     - Thêm phần method ReflectTracking2 như bên dưới.
@@ -217,45 +217,45 @@ void Update()
 ```
 - Ấn vào icon camera (khoanh đỏ) như trong hình
 ```
-![1-Debug_1_FirstPersonView](../../Images/HandTracking/1-Debug_1_FirstPersonView.gif)
+![1-Debug_1_FirstPersonView](../../Images/HandTracking/Mobile/1-Debug_1_FirstPersonView.gif)
 
 6. <ins>Bật VR IK</ins>
 ```
 - Enable component VRIK
 ```
-![1-Debug_2_EnableVRIK_1](../../Images/HandTracking/1-Debug_2_EnableVRIK_1.png)
+![1-Debug_2_EnableVRIK_1](../../Images/HandTracking/Mobile/1-Debug_2_EnableVRIK_1.png)
 
 ```
 - Giơ 2 tay trước front-facing camera của Editor
 ```
-![1-Debug_3_EnableVRIK_2](../../Images/HandTracking/1-Debug_3_EnableVRIK_2.gif)
+![1-Debug_3_EnableVRIK_2](../../Images/HandTracking/Mobile/1-Debug_3_EnableVRIK_2.gif)
 
 7. <ins>Hiện render của bàn tay ảo</ins>
 ```
 - Chọn Enable Renderer cho tay trái
 ```
-![1-Debug_4_EnableHandRender_1](../../Images/HandTracking/1-Debug_4_EnableHandRender_1.png)
+![1-Debug_4_EnableHandRender_1](../../Images/HandTracking/Mobile/1-Debug_4_EnableHandRender_1.png)
 
 ```
 - Chọn Enable Renderer cho tay phải
 ```
-![1-Debug_5_EnableHandRender_2](../../Images/HandTracking/1-Debug_5_EnableHandRender_2.png)
+![1-Debug_5_EnableHandRender_2](../../Images/HandTracking/Mobile/1-Debug_5_EnableHandRender_2.png)
 
 ```
 - Giơ 2 tay trước front-facing camera của Editor
 ```
-![1-Debug_6_EnableHandRender_3](../../Images/HandTracking/1-Debug_6_EnableHandRender_3.gif)
+![1-Debug_6_EnableHandRender_3](../../Images/HandTracking/Mobile/1-Debug_6_EnableHandRender_3.gif)
 
 8. <ins>Tìm chỗ hiện render của Bone Map</ins>
 ```
 - BoneMap nằm trong LeftHandMobile và RightHandMobile gameobject
 ```
-![1-Debug_7_BoneMap_1](../../Images/HandTracking/1-Debug_7_BoneMap_1.png)
+![1-Debug_7_BoneMap_1](../../Images/HandTracking/Mobile/1-Debug_7_BoneMap_1.png)
 
 ```
 - Tìm vị trí hiện render BoneMap (Bone Poses) trên Scene View
 ```
-![1-Debug_7_BoneMap_2](../../Images/HandTracking/1-Debug_7_BoneMap_2.gif)
+![1-Debug_7_BoneMap_2](../../Images/HandTracking/Mobile/1-Debug_7_BoneMap_2.gif)
 
 ## Improvement Suggestions
 1. The appearance of jitter in the movement
@@ -263,5 +263,5 @@ void Update()
 - Trên device yếu, phần di chuyển của bàn tay không được mượt mà và bị giật (teleport) giữa các frame.
 - Giải pháp là áp dụng interpolation vào phần movement và rotation của hand giữa các frame.
 ```
-![3-Improvements_1_HandMovement](../../Images/HandTracking/3-Improvements_1_HandMovement.gif)
+![3-Improvements_1_HandMovement](../../Images/HandTracking/Mobile/3-Improvements_1_HandMovement.gif)
    
