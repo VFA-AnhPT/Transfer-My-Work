@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 26-05-2024
+> Last updated: 27-05-2024
 > 
 > [Vietnamese]
 # Hand Tracking For Mobile
@@ -264,4 +264,23 @@ void Update()
 - Giải pháp là áp dụng interpolation vào phần movement và rotation của hand giữa các frame.
 ```
 ![3-Improvements_1_HandMovement](../../Images/HandTracking/Mobile/3-Improvements_1_HandMovement.gif)
-   
+
+## Further Features
+1. <ins><b>Hand Gestures with front-facing camera</b></ins>
+- <b>Trường hợp góc nhìn người thứ ba (Third Person View)</b>
+    - Điều chỉnh phần detect loại camera (front hoặc rear) theo platform ở HandTrackingConfig.
+![4-FurtherFeatures_1_HandGestures](../../Images/HandTracking/Mobile/4-FurtherFeatures_1_HandGestures.png)
+    - Phần nhận data của landmark và handedness nằm ở MobileHandTrackingManager.
+![4-FurtherFeatures_2_HandGestures_LandmarkData](../../Images/HandTracking/Mobile/4-FurtherFeatures_2_HandGestures_LandmarkData.png)
+    - Tắt phần xử lý 2 tay để tránh tracking hand anchor và hand fingers ở MobileHandTrackingManager.
+![4-FurtherFeatures_3_HandGestures_DisableMobileHand](../../Images/HandTracking/Mobile/4-FurtherFeatures_3_HandGestures_DisableMobileHand.png)
+    - Implement tính năng hand gesture. Gợi ý: ví dụ tạo HandGestureRecognition.cs và chạy xử lý composition này ở MobileHandTrackingManager.
+    - Tiếp theo là thêm api vào HandTrackingWrapper (ví dụ như IsLeftFingerPinching(Finger finger)).
+    - Bổ sung phần detect ngón tay được pinch vào MobileCameraRig.
+    - ![4-FurtherFeatures_3_HandGestures_Implementation](../../Images/HandTracking/Mobile/4-FurtherFeatures_3_HandGestures_Implementation.png)
+  
+- <b>Trường hợp góc nhìn người thứ nhất (First Person View)</b>
+    - Tương đối giống với phần góc nhìn thứ 3.
+    - Nếu khách yêu cầu tracking cả 2 tay (hand anchor + hand fingers) thì không tắt phần xử lý ở MobileHandTrackingManager.
+![4-FurtherFeatures_3_HandGestures_EnableMobileHand](../../Images/HandTracking/Mobile/4-FurtherFeatures_3_HandGestures_EnableMobileHand.png)
+    - Implement thêm phần hand gesture như góc nhìn người thứ ba ở trên.
