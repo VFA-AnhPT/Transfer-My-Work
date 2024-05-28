@@ -5,15 +5,19 @@
 > [Japan/[Vietnamese](../HandTracking.md)]
 # Hand Tracking For Mobile
 
+## Before We Start
+- このドキュメントには多数の静止画 PNG 画像とアニメーション GIF 画像が添付されています
+- 重要な情報を見逃さないように、ダウンロードが完了するまで待ってから読み始める必要があります。
+
 ## Related Platforms
 Platform   |Notes       
 ----------------|------------
-[Quest](./Platforms/HandTracking_Quest.md)|Hand tracking for Quest.
-[Vive](./Platforms/HandTracking_Vive.md)|Hand tracking for Vive.
+[Quest](../Platforms/HandTracking_Quest.md)|Hand tracking for Quest.
+[Vive](../Platforms/HandTracking_Vive.md)|Hand tracking for Vive.
 
 ## Flow
 ### Diagram
-![0-HandTrackingDiagram](../../../Images/HandTracking/0-HandTrackingDiagram.png)
+![0-HandTrackingDiagram](../../../Images/HandTracking/Mobile/0-HandTrackingDiagram.png)
 
 ### Description
 1. XRSynthesisLifetimeScope (VContainer)
@@ -28,7 +32,7 @@ Platform   |Notes
 - トラッキング VR (頭、左手/右手など) はドメイン (ハンド トラッキング) を通じて処理されます。
 - MobileVRModeProviderは、nonVRモードとVRモードを切り替える際の処理を制御するために使用されます。
 ````
-![2-Flow_0_DomainXR](../../../Images/HandTracking/2-Flow_0_DomainXR.png)
+![2-Flow_0_DomainXR](../../../Images/HandTracking/Mobile/2-Flow_0_DomainXR.png)
 
 3. Domain (Hand Tracking) 
 - <ins>MobileHandTrackingManager</ins>
@@ -72,7 +76,7 @@ Platform   |Notes
 - ハンドランドマークに基づいてボーンポーズ(各関節)の回転角度を計算します。
 - バインド ボーン ポーズは、humanoid avatar ビルドの初期状態を作成するために使用されます。
 ````
-![2-Flow_1_MobileHand](../../../Images/HandTracking/2-Flow_1_MobileHand.gif)
+![2-Flow_1_MobileHand](../../../Images/HandTracking/Mobile/2-Flow_1_MobileHand.gif)
 
 - <ins>MobileHandRenderer</ins>
 ````
@@ -81,7 +85,7 @@ Platform   |Notes
   + bone poses から構築された手は、各関節の回転角度を示すために使用されます。
   + bine bone poses からのビルド手は、humanoid avatarビルドパーツのセットアップに使用されます。
 ````
-![2-Flow_2_MobileHandRenderer](../../../Images/HandTracking/2-Flow_2_MobileHandRenderer.gif)
+![2-Flow_2_MobileHandRenderer](../../../Images/HandTracking/Mobile/2-Flow_2_MobileHandRenderer.gif)
 
 - <ins>HandTrackingWrapper</ins>
 ````
@@ -93,11 +97,17 @@ Platform   |Notes
 - 目的はドメイン (ハンド トラッキング) 部分のコードをクリーンにすることであり、以下の処理にはあまり注意を払う必要はありません。
 ````
 
+## Apply Calculated Hand Tracking Data To Avatar's Hand Model
+- 処理メカニズムはQuest/Viveに似ています
+- **Apply Calculated Hand Tracking Data To Avatar's Hand Model** セクションを参照してください。:
+  + [Quest](./Platforms/HandTracking_Quest.md)
+  + [Vive](./Platforms/HandTracking_Vive.md)
+
 ## How to debug in Editor
 1. <ins>Script symbol</ins>
     - シンボル DEBUG_HAND_TRACKING_MOBILE を追加
 
-![1-Debug_0_DefineSymbol](../../../Images/HandTracking/1-Debug_0_DefineSymbol.png)
+![1-Debug_0_DefineSymbol](../../../Images/HandTracking/Mobile/1-Debug_0_DefineSymbol.png)
    
 2. <ins>VRPlayerMovement.cs</ins>
     - 以下のように ReflectTracking2 メソッド セクションを追加します
@@ -204,50 +214,50 @@ void Update()
 ```
 - 以下の画像のようなカメラアイコン（赤丸）をクリックします。
 ```
-![1-Debug_1_FirstPersonView](../../../Images/HandTracking/1-Debug_1_FirstPersonView.gif)
+![1-Debug_1_FirstPersonView](../../../Images/HandTracking/Mobile/1-Debug_1_FirstPersonView.gif)
 
 6. <ins>Bật VR IK</ins>
 ```
 - VRIK コンポーネントを有効にする
 ```
-![1-Debug_2_EnableVRIK_1](../../../Images/HandTracking/1-Debug_2_EnableVRIK_1.png)
+![1-Debug_2_EnableVRIK_1](../../../Images/HandTracking/Mobile/1-Debug_2_EnableVRIK_1.png)
 
 ```
 - エディターの正面カメラの前で両手を上げる
 ```
-![1-Debug_3_EnableVRIK_2](../../../Images/HandTracking/1-Debug_3_EnableVRIK_2.gif)
+![1-Debug_3_EnableVRIK_2](../../../Images/HandTracking/Mobile/1-Debug_3_EnableVRIK_2.gif)
 
 7. <ins>仮想手のレンダリングを表示</ins>
 ```
 - 左手のレンダラー（ Renderer）を有効にするを選択します
 ```
-![1-Debug_4_EnableHandRender_1](../../../Images/HandTracking/1-Debug_4_EnableHandRender_1.png)
+![1-Debug_4_EnableHandRender_1](../../../Images/HandTracking/Mobile/1-Debug_4_EnableHandRender_1.png)
 
 ```
 - 右手のレンダラー（ Renderer）を有効にするを選択します
 ```
-![1-Debug_5_EnableHandRender_2](../../../Images/HandTracking/1-Debug_5_EnableHandRender_2.png)
+![1-Debug_5_EnableHandRender_2](../../../Images/HandTracking/Mobile/1-Debug_5_EnableHandRender_2.png)
 
 ```
 - エディターの正面カメラの前で両手を上げる
 ```
-![1-Debug_6_EnableHandRender_3](../../../Images/HandTracking/1-Debug_6_EnableHandRender_3.gif)
+![1-Debug_6_EnableHandRender_3](../../../Images/HandTracking/Mobile/1-Debug_6_EnableHandRender_3.gif)
 
 8. <ins>ボーン マップ レンダリングが表示される場所を見つける</ins>
 ```
 - BoneMap は LeftHandMobile および RightHandMobile ゲームオブジェクトにあります
 ```
-![1-Debug_7_BoneMap_1](../../../Images/HandTracking/1-Debug_7_BoneMap_1.png)
+![1-Debug_7_BoneMap_1](../../../Images/HandTracking/Mobile/1-Debug_7_BoneMap_1.png)
 
 ```
 - シーン ビューで BoneMap (Bone Poses) のレンダリング位置を見つけます。
 ```
-![1-Debug_7_BoneMap_2](../../../Images/HandTracking/1-Debug_7_BoneMap_2.gif)
+![1-Debug_7_BoneMap_2](../../../Images/HandTracking/Mobile/1-Debug_7_BoneMap_2.gif)
 
-## Improvement Suggestions
+## Remaining Tasks
 1. The appearance of jitter in the movement
 ```
 - 弱いデバイスでは、手の動きがスムーズでなく、フレーム間でガクガク・ブルブル (テレポート) します。
 - 解決策は、フレーム間の手の動きと回転に補間(interpolation)を適用することです。
 ```
-![3-Improvements_1_HandMovement](../../../Images/HandTracking/3-Improvements_1_HandMovement.gif)
+![3-Improvements_1_HandMovement](../../../Images/HandTracking/Mobile/3-Improvements_1_HandMovement.gif)
