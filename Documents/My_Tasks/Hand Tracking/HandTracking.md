@@ -261,7 +261,7 @@ void Update()
 ```
 ![1-Debug_7_BoneMap_2](../../Images/HandTracking/Mobile/1-Debug_7_BoneMap_2.gif)
 
-## Improvement Suggestions
+## Remaining Tasks
 1. The appearance of jitter in the movement
 ```
 - Trên device yếu, phần di chuyển của bàn tay không được mượt mà và bị giật (teleport) giữa các frame.
@@ -269,8 +269,7 @@ void Update()
 ```
 ![3-Improvements_1_HandMovement](../../Images/HandTracking/Mobile/3-Improvements_1_HandMovement.gif)
 
-## Further Features
-1. <ins><b>Hand Gestures with front-facing camera</b></ins>
+2. <ins><b>Hand Gestures with front-facing camera</b></ins>
 - <b>Trường hợp góc nhìn người thứ ba (Third Person View)</b>
     - Điều chỉnh phần detect loại camera (front hoặc rear) theo platform ở HandTrackingConfig.
 ![4-FurtherFeatures_1_HandGestures](../../Images/HandTracking/Mobile/4-FurtherFeatures_1_HandGestures.png)
@@ -288,3 +287,8 @@ void Update()
     - Nếu khách yêu cầu tracking cả 2 tay (hand anchor + hand fingers) thì không tắt phần xử lý ở MobileHandTrackingManager.
 ![4-FurtherFeatures_3_HandGestures_EnableMobileHand](../../Images/HandTracking/Mobile/4-FurtherFeatures_3_HandGestures_EnableMobileHand.png)
     - Implement thêm phần hand gesture như góc nhìn người thứ ba ở trên.
+
+3. <ins><b>UI interaction with ray pointer</b></ins>
+- Task này nên hỏi khách hàng trước khi làm.
+- Tham khảo phần sample của Google VR sdk và custom lại theo nhu cầu của khách hàng.
+![4-FurtherFeatures_3_RayPointer_Implementation](../../Images/HandTracking/Mobile/4-FurtherFeatures_3_RayPointer_Implementation.png)
