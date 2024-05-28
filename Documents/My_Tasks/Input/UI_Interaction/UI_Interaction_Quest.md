@@ -81,11 +81,12 @@ Platform   |Notes
 ## Important Notes
 1. <ins>How to scroll UI panel
 - Chiếu laser point vào phần UI panel cần scroll.
-- <b>Giữ</b> pinch ngón thumb và index.
-- Di chuyển bàn tay về bên trái hoặc phải để scroll.
-- Để hiểu cách đổi thao tác scroll, cần tham khảo ([My_Notes/Platform](../../../My_Notes/Platform.md))
+- Pinch ngón thumb và index và <b>giữ pinch trong vài giây</b>.
+- Vẫn giữ pinch và di chuyển bàn tay về bên trái hoặc phải để scroll.
+- Để biết cách đổi thao tác cho phần scroll, cần đọc thêm ở đây:
   - https://developer.oculus.com/blog/unitys-ui-system-in-vr/
   - https://developer.oculus.com/documentation/unity/unity-ovrinput/
+  - Tham khảo thêm ở đây cho phần <b>Quest</b>: [My_Notes/Platform](../../../My_Notes/Platform.md)
   
 2. <ins>Interact With UI Manually
 - Đối với những 3D UI mà không dùng CanvasAdjuster đính kèm:
