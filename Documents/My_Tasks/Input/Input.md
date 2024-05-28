@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 27-05-2024
+> Last updated: 28-05-2024
 > 
 > [Vietnamese]
 # Input
