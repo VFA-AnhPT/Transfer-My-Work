@@ -62,5 +62,5 @@
 ## UI Interaction
 Platform   |Notes       
 ----------------|------------
-[Quest](./Platforms/UI_Interaction_Quest.md)|UI interaction for Quest.
-[Vive](./Platforms/UI_Interaction_Vive.md)|UI interaction for Vive.
+[Quest](./UI_Interaction/UI_Interaction_Quest.md)|UI interaction for Quest.
+[Vive](./UI_Interaction/UI_Interaction_Vive.md)|UI interaction for Vive.
