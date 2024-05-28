@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 27-05-2024
+> Last updated: 28-05-2024
 > 
 > [Vietnamese]
 # UI Interaction For Quest
@@ -13,11 +13,12 @@ Platform   |Notes
 
 ## Flow
 ### Diagram
-![0-HandTrackingDiagram](../../../Images/HandTracking/Quest/0-HandTrackingDiagram.png)
+![0-UI_Interaction_Diagram](../../../Images/Input/Quest/0-UI_Interaction_Diagram.png)
 
 ### Description
 1. XRSynthesisLifetimeScope (VContainer)
 ````
 - Đăng ký ICameraRig, ICameraRig được kế thừa bởi MetaQuestCameraRig.
-- Đăng ký HandPoseController như một entry point và cập nhật xuyên suốt.
+- Đăng ký ICanvasRaycasterProvider, ICanvasRaycasterProvider được kế thừa bởi MetaQuestCanvasRaycasterProvider.
+- Nhiệm vụ của MetaQuestCanvasRaycasterProvider là cung cấp raycast component cho UI để có thể tương tác.
 ````
