@@ -32,7 +32,7 @@ Platform   |Notes
   + Controller mode: nhận left/rightHandAnchor từ OVRCameraRig là ray transform.
 - Ray transform ở trên sẽ dùng để nhận hit target (khi hit UI) và vẽ line renderer.
 ````
-![1-UI_Interaction_1_HandleInputSelector](../../../Images/Input/Quest/1-UI_Interaction_1_HandleInputSelector.png)
+![1-UI_Interaction_3_HandleInputSelector](../../../Images/Input/Quest/1-UI_Interaction_3_HandleInputSelector.png)
 
 3. OVRInputModule (Domain - UI Interaction)
 ````
@@ -40,6 +40,8 @@ Platform   |Notes
 - Nhận ray transform để xử lý direction của ray pointer.
 - Nhận LaserPointer (kế thừa OVRCursor) để detect hit target và vẽ ray bằng line renderer.  
 ````
+![1-UI_Interaction_1_OVRInputModule_1](../../../Images/Input/Quest/1-UI_Interaction_1_OVRInputModule_1.png)
+![1-UI_Interaction_1_OVRInputModule_2](../../../Images/Input/Quest/1-UI_Interaction_1_OVRInputModule_2.png)
 
 4. OVRCameraRig (Domain - UI Interaction)
 ````
@@ -77,7 +79,15 @@ Platform   |Notes
 ````
 
 ## Important Notes
-1. <ins>Interact With UI Manually
+1. <ins>How to scroll UI panel
+- Chiếu laser point vào phần UI panel cần scroll.
+- <b>Giữ</b> pinch ngón thumb và index.
+- Di chuyển bàn tay về bên trái hoặc phải để scroll.
+- Để hiểu cách đổi thao tác scroll, cần tham khảo ([My Notes/Platform](../../../MyNotes/Platform.md))
+  - https://developer.oculus.com/blog/unitys-ui-system-in-vr/
+  - https://developer.oculus.com/documentation/unity/unity-ovrinput/
+  
+2. <ins>Interact With UI Manually
 - Đối với những 3D UI mà không dùng CanvasAdjuster đính kèm:
   - Inject ICanvasRaycasterProvider vào script cần tương tác với UI.
   - Chọn ra những UI canvas cần tương tác và add vào ICanvasRaycasterProvider.
