@@ -1,9 +1,13 @@
 > Author: TriHD
 > 
-> Last updated: 27-05-2024
+> Last updated: 28-05-2024
 > 
 > [Vietnamese]
 # Hand Tracking For Mobile
+
+## Before We Start
+- Có nhiều hình tĩnh png và hình động gif đính kèm trong document này.
+- Nên đợi load hết rồi bắt đầu đọc để tránh lướt qua những thông tin cần thiết.
 
 ## Related Platforms
 Platform   |Notes       
