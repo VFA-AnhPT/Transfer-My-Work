@@ -292,3 +292,7 @@ void Update()
 - Task này nên hỏi khách hàng trước khi làm.
 - Tham khảo phần sample của Google VR sdk và custom lại theo nhu cầu của khách hàng.
 ![4-FurtherFeatures_3_RayPointer_Implementation](../../Images/HandTracking/Mobile/4-FurtherFeatures_3_RayPointer_Implementation.png)
+
+4. <ins><b>iOS platform version</b></ins>
+- Bên iOS cần bổ sung thêm platform switcher. Xem thêm ở đây: [Platform Switcher](../Platform/PlatformSwitcher.md)
+- Phần iOS setting của Google VR sdk cần thêm vào platform switcher xem ở đây: [Google VR Sdk iOS](https://developers.google.com/cardboard/develop/unity/quickstart#configuring_ios_project_settings)
