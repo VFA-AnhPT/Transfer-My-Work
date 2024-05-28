@@ -262,7 +262,7 @@ void Update()
 ![1-Debug_7_BoneMap_2](../../Images/HandTracking/Mobile/1-Debug_7_BoneMap_2.gif)
 
 ## Remaining Tasks
-1. The appearance of jitter in the movement
+1. <ins><b>The appearance of jitter in the movement</b></ins>
 ```
 - Trên device yếu, phần di chuyển của bàn tay không được mượt mà và bị giật (teleport) giữa các frame.
 - Giải pháp là áp dụng interpolation vào phần movement và rotation của hand giữa các frame.
