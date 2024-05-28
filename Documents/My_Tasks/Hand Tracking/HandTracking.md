@@ -2,7 +2,7 @@
 > 
 > Last updated: 28-05-2024
 > 
-> [Vietnamese]
+> [[Japanese](./Languages/HandTracking_jp.md)/Vietnamese]
 # Hand Tracking For Mobile
 
 ## Before We Start
