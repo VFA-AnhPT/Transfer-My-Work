@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 27-05-2024
+> Last updated: 28-05-2024
 > 
 > [Vietnamese]
 # UI Interaction For Vive
@@ -13,11 +13,10 @@ Platform   |Notes
 
 ## Flow
 ### Diagram
-![0-HandTrackingDiagram](../../../Images/HandTracking/Vive/0-HandTrackingDiagram.png)
+![0-HandTrackingDiagram111](../../../Images/HandTracking/Vive/0-HandTrackingDiagram111.png)
 
 ### Description
 1. XRSynthesisLifetimeScope (VContainer)
 ````
 - Đăng ký ICameraRig, ICameraRig được kế thừa bởi ViveCameraRig.
-- Đăng ký HandPoseController như một entry point và cập nhật xuyên suốt.
 ````
