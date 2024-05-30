@@ -1,11 +1,12 @@
 > Author: TriHD
 > 
-> Last updated: 29-05-2024
+> Last updated: 30-05-2024
 > 
 > [Vietnamese]
 # Remaining Tasks
 
 ## Mobile
+- Branch: <b>work/vfa/trihd/android-sync-avatar-hands-with-tracking-hand-data</b>
 ````
 1. The appearance of jitter in the movement.
 2. Hand Gestures with front-facing camera.
