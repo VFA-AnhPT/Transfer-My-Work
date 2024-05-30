@@ -1,6 +1,6 @@
 > Author: TriHD
 > 
-> Last updated: 28-05-2024
+> Last updated: 30-05-2024
 > 
 > [[Japanese](./Languages/HandTracking_jp.md)/Vietnamese]
 # Hand Tracking For Mobile
@@ -262,6 +262,7 @@ void Update()
 ![1-Debug_7_BoneMap_2](../../Images/HandTracking/Mobile/1-Debug_7_BoneMap_2.gif)
 
 ## Remaining Tasks
+- Branch: <b>work/vfa/trihd/android-sync-avatar-hands-with-tracking-hand-data</b>
 1. <ins><b>The appearance of jitter in the movement</b></ins>
 ```
 - Trên device yếu, phần di chuyển của bàn tay không được mượt mà và bị giật (teleport) giữa các frame.
